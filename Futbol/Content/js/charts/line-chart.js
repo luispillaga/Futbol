@@ -12,8 +12,8 @@
 			datasets: [{
 				label: "My First dataset",
 				fill: false,
-                backgroundColor: '#173C08',
-				borderColor: '#173C08',
+                backgroundColor: '#334667',
+				borderColor: '#334667',
 				data: [3, -5, -2, 3, 9, 12, 19]
             }, {
                 label: "My Second dataset",
@@ -80,8 +80,8 @@
 			datasets: [{
 				label: "My First dataset",
 				fill: false,
-                backgroundColor: '#173C08',
-				borderColor: '#173C08',
+                backgroundColor: '#334667',
+				borderColor: '#334667',
 				data: [3, -5, -2, 3, 9, 12, 19],
 				yAxisID: "y-axis-1"
             }, {
@@ -132,8 +132,8 @@
 			datasets: [{
 				label: "steppedLine",
 				fill: false,
-                backgroundColor: '#173C08',
-				borderColor: '#173C08',
+                backgroundColor: '#334667',
+				borderColor: '#334667',
 				data: [3, -5, -2, 3, 9, 12, 19]
             }]
 		},
@@ -178,8 +178,8 @@
 			datasets: [{
 				label: "Cubic interpolation",
 				fill: false,
-                backgroundColor: '#173C08',
-				borderColor: '#173C08',
+                backgroundColor: '#334667',
+				borderColor: '#334667',
 				data: [0, 15, 17, 200, 0, 12, -200, 5, 200, 8, 200, 12, 200],
 				cubicInterpolationMode: 'monotone'
             }, {
@@ -244,8 +244,8 @@
 			datasets: [{
 				label: "Unfilled",
 				fill: false,
-                backgroundColor: '#173C08',
-				borderColor: '#173C08',
+                backgroundColor: '#334667',
+				borderColor: '#334667',
 				data: [0, 15, 17, 200, 0, 12, -200, 5]
             }, {
                 label: "Dashed",
@@ -311,8 +311,8 @@
 			labels: ["January", "February", "March", "April", "May", "June", "July"],
 			datasets: [{
 				label: "My First dataset",
-				backgroundColor: '#173C08',
-				borderColor: '#173C08',
+				backgroundColor: '#334667',
+				borderColor: '#334667',
 				data: [0, 10, 20, 30, 40, 50, 60],
 				fill: false,
 				pointRadius: 4,
@@ -367,8 +367,8 @@
 			labels: ["January", "February", "March", "April", "May", "June", "July"],
 			datasets: [{
 				label: "My First dataset",
-				backgroundColor: '#173C08',
-				borderColor: '#173C08',
+				backgroundColor: '#334667',
+				borderColor: '#334667',
 				data: [60, 50, 40, 30, 20, 10, 0],
 				fill: false,
 				pointRadius: 6,
@@ -423,8 +423,8 @@
 			labels: ["January", "February", "March", "April", "May", "June", "July"],
 			datasets: [{
 				label: "My First dataset",
-				backgroundColor: '#173C08',
-				borderColor: '#173C08',
+				backgroundColor: '#334667',
+				borderColor: '#334667',
 				data: [0, 10, 60, 30, 0, 80, 60],
 				fill: false,
 				pointRadius: 6,

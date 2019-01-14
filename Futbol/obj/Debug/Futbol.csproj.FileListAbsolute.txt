@@ -118,3 +118,11 @@ C:\Users\pc\Documents\Visual Studio 2017\Projects\Futbol\Futbol\obj\Debug\Futbol
 C:\Users\pc\Documents\Visual Studio 2017\Projects\Futbol\Futbol\obj\Debug\Futbol.csproj.CopyComplete
 C:\Users\pc\Documents\Visual Studio 2017\Projects\Futbol\Futbol\obj\Debug\Futbol.dll
 C:\Users\pc\Documents\Visual Studio 2017\Projects\Futbol\Futbol\obj\Debug\Futbol.pdb
+C:\Users\pc\Documents\Visual Studio 2017\Projects\Futbol\Futbol\obj\Debug\Futbol.Migrations.InitialCreate.resources
+C:\Users\pc\Documents\Visual Studio 2017\Projects\Futbol\Futbol\obj\Debug\Futbol.csproj.GenerateResource.cache
+C:\Users\pc\Documents\Visual Studio 2017\Projects\Futbol\Futbol\bin\System.Net.Http.Formatting.dll
+C:\Users\pc\Documents\Visual Studio 2017\Projects\Futbol\Futbol\bin\System.Web.Http.dll
+C:\Users\pc\Documents\Visual Studio 2017\Projects\Futbol\Futbol\bin\System.Web.Http.WebHost.dll
+C:\Users\pc\Documents\Visual Studio 2017\Projects\Futbol\Futbol\bin\System.Net.Http.Formatting.xml
+C:\Users\pc\Documents\Visual Studio 2017\Projects\Futbol\Futbol\bin\System.Web.Http.xml
+C:\Users\pc\Documents\Visual Studio 2017\Projects\Futbol\Futbol\bin\System.Web.Http.WebHost.xml

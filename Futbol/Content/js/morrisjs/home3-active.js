@@ -44,12 +44,12 @@
         labels: ['Python', 'PHP', 'Java'],
         pointSize: 0,
         fillOpacity: 0.95,
-        pointStrokeColors:['#65b12d', '#933EC5 ', '#173C08'],
+        pointStrokeColors:['#65b12d', '#933EC5 ', '#334667'],
         behaveLikeLine: true,
         gridLineColor: '#e0e0e0',
         lineWidth:0,
         hideHover: 'auto',
-        lineColors: ['#65b12d', '#933EC5 ', '#173C08'],
+        lineColors: ['#65b12d', '#933EC5 ', '#334667'],
         resize: true
         
     });
@@ -115,7 +115,7 @@ Morris.Bar({
         xkey: 'y',
         ykeys: ['Sale', 'Rent', 'c'],
         labels: ['CSE', 'Accounting', 'Electrical'],
-        barColors:['#173C08', '#933EC5', '#65b12d'],
+        barColors:['#334667', '#933EC5', '#65b12d'],
         hideHover: 'auto',
          barSizeRatio:0.45,
         gridLineColor: '#eef0f2',

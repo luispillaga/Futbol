@@ -31,7 +31,7 @@
 	position: absolute;
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
-	border-bottom: 20px solid #173C08;
+	border-bottom: 20px solid #334667;
 }
 .tsperloader:nth-child(25) {
  bottom: 0px;
@@ -585,7 +585,7 @@
 	-webkit-border-radius: 50% 50% 50% 50%;
 	border-radius: 50% 50% 50% 50%;
 	position: absolute;
-	border-top: 5px solid #173C08;
+	border-top: 5px solid #334667;
 	border-bottom: 5px solid transparent;
 	border-left:  5px solid #FFF;
 	border-right: 5px solid transparent;
@@ -664,8 +664,8 @@
 	-webkit-border-radius: 50% 50% 50% 50%;
 	border-radius: 50% 50% 50% 50%;
 	position: absolute;
-	border-left: 5px solid #173C08;
-	border-right: 5px solid #173C08;
+	border-left: 5px solid #334667;
+	border-right: 5px solid #334667;
 	border-top: 5px solid transparent;
 	border-bottom: 5px solid transparent;
 	-webkit-animation: animate 2s infinite;
@@ -752,7 +752,7 @@
 	width: 8px;
 	height: 50px;
 	margin-right:5px;
-	background-color: #173C08;
+	background-color: #334667;
 	-webkit-animation: animate 1s infinite;
 	animation: animate 1s infinite;
 	float: left;
@@ -838,7 +838,7 @@
 .tsperloader5 {
 	width: 20px;
 	height: 20px;
-	background-color: #173C08;
+	background-color: #334667;
 	position: absolute;
 	-moz-border-radius: 50% 50% 50% 50%;
 	-webkit-border-radius: 50% 50% 50% 50%;
@@ -947,7 +947,7 @@
 .tsperloader6 {
 	width: 20px;
 	height: 20px;
-	background-color: #173C08;
+	background-color: #334667;
 	margin-right: 20px;
 	float: left;
 	margin-bottom: 20px;
@@ -1042,7 +1042,7 @@
 .tsperloader7 {
 	width: 20px;
 	height: 20px;
-	background-color: #173C08;
+	background-color: #334667;
 	-moz-border-radius: 50% 50% 50% 50%;
 	-webkit-border-radius: 50% 50% 50% 50%;
 	border-radius: 50% 50% 50% 50%;
@@ -1159,7 +1159,7 @@ top:0;
 .tsperloader8 {
 	width: 20px;
 	height: 20px;
-	background-color: #173C08;
+	background-color: #334667;
 	float: left;
 	-moz-border-radius: 50% 50% 50% 50%;
 	-webkit-border-radius: 50% 50% 50% 50%;
@@ -1289,7 +1289,7 @@ top:0;
 .tsperloader9 {
 	width: 20px;
 	height: 20px;
-	background-color: #173C08;
+	background-color: #334667;
 	float: left;
 	-moz-border-radius: 50% 50% 50% 50%;
 	-webkit-border-radius: 50% 50% 50% 50%;
@@ -1417,7 +1417,7 @@ top:0;
 .tsperloader10-one {
 	width: 18px;
 	height: 18px;
-	background-color: #173C08;
+	background-color: #334667;
 	float: left;
 	margin-top: 15px;
 	margin-right: 15px;
@@ -1430,7 +1430,7 @@ top:0;
 .tsperloader10-two {
 	width: 18px;
 	height: 18px;
-	background-color: #173C08;
+	background-color: #334667;
 	float: left;
 	margin-top: 15px;
 	margin-right: 15px;
@@ -1556,7 +1556,7 @@ top:0;
 .tsperloader11 {
 	width: 18px;
 	height: 18px;
-	background-color: #173C08;
+	background-color: #334667;
 	float: left;
 	margin-top: 15px;
 	margin-right: 15px;
@@ -1638,7 +1638,7 @@ top:0;
 .tsperloader12 {
 	width: 20px;
 	height:20px;
-	background-color: #173C08;
+	background-color: #334667;
 	float: left;
 	margin-top: 15px;
 	-moz-border-radius: 50% 50% 50% 50%;
@@ -1752,7 +1752,7 @@ top:0;
 .tsperloader13 {
 	width: 20px;
 	height: 20px;
-	background-color: #173C08;
+	background-color: #334667;
 	position: absolute;
 	left: 65px;
 	top: 65px;
@@ -1946,7 +1946,7 @@ top:0;
 .tsperloader14 {
 	width: 20px;
 	height: 20px;
-	background-color: #173C08;
+	background-color: #334667;
 	float: left;
 	margin-right: 20px;
 	margin-top: 65px;
@@ -2040,7 +2040,7 @@ top:0;
 .tsperloader15-one {
 	width: 18px;
 	height: 18px;
-	background-color: #173C08;
+	background-color: #334667;
 	float: left;
 	margin-top: 15px;
 	margin-right: 15px;
@@ -2053,7 +2053,7 @@ top:0;
 .tsperloader15-two {
 	width: 18px;
 	height: 18px;
-	background-color: #173C08;
+	background-color: #334667;
 	float: left;
 	margin-top: 15px;
 	margin-right: 15px;
@@ -2172,7 +2172,7 @@ top:0;
 .tsperloader16 {
 	width: 20px;
 	height: 20px;
-	background-color: #173C08;
+	background-color: #334667;
 	margin-right: 110px;
 	float: left;
 	margin-bottom: 110px;
@@ -2373,7 +2373,7 @@ top:0;
 .tsperloader17 {
 	width: 25px;
 	height: 25px;
-	background-color: #173C08;
+	background-color: #334667;
 	float: left;
 }
 #tsperloader17_one {
@@ -2500,7 +2500,7 @@ top:0;
 .tsperloader18 {
 	width: 25px;
 	height: 25px;
-	background-color: #173C08;
+	background-color: #334667;
 	margin-right: 50px;
 	float: left;
 	margin-bottom: 50px;
@@ -2675,7 +2675,7 @@ top:0;
 .tsperloader19 {
 	width: 26px;
 	height: 26px;
-	background-color:#173C08;
+	background-color:#334667;
 	margin-right: 20px;
 	float: left;
 	margin-bottom: 20px;
@@ -2879,7 +2879,7 @@ top:0;
 .tsperloader20 {
 	width: 20px;
 	height: 20px;
-	background-color: #173C08;
+	background-color: #334667;
 	margin-right: 20px;
 	float: left;
 	margin-bottom: 20px;
@@ -2973,10 +2973,10 @@ top:0;
 .tsperloader21 {
 	width: 25px;
 	height: 25px;
-	background-color: #173C08;
+	background-color: #334667;
 	margin-right: auto;
 	margin-left: auto;
-	border: 4px solid rgba #173C08;
+	border: 4px solid rgba #334667;
 	left: 37px;
 	top: 37px;
 	position: absolute;
@@ -3164,7 +3164,7 @@ top:0;
 	background-color: rgba(255, 255, 255, 0);
 	margin-right: auto;
 	margin-left: auto;
-	border: 4px solid #173C08;
+	border: 4px solid #334667;
 	left: 73px;
 	top: 73px;
 	position: absolute;
@@ -3314,7 +3314,7 @@ top: 23px;
 .tsperloader23 {
 	width: 20px;
 	height: 20px;
-	background-color:#173C08;
+	background-color:#334667;
 	position: absolute;
 	left: 65px;
 	top: 65px;
@@ -3502,7 +3502,7 @@ top: 23px;
 #tsperloader24 {
 	width: 80px;
 	height: 80px;
-	background-color: #173C08;
+	background-color: #334667;
 	-webkit-animation: animate 1s infinite ease-in-out;
 	animation: animate 1s infinite ease-in-out;
 	margin-right: auto;
@@ -3563,7 +3563,7 @@ top: 23px;
 }
 [class^="tsperloader_loader"] > div {
  float: left;
- background: #173C08;
+ background: #334667;
  height: 100%;
  width: 5px;
  margin-right: 1px;
@@ -3736,7 +3736,7 @@ top: 23px;
 }
 @-moz-keyframes loading2 {
  10% {
- background: #173C08;
+ background: #334667;
 }
  15% {
  -webkit-transform: scaleY(1.2) translateX(10px);
@@ -3744,7 +3744,7 @@ top: 23px;
  -ms-transform: scaleY(1.2) translateX(10px);
  -o-transform: scaleY(1.2) translateX(10px);
  transform: scaleY(1.2) translateX(10px);
- background: #173C08;
+ background: #334667;
 }
  90%, 100% {
  -webkit-transform: scaleY(0.05) translateX(-5px);
@@ -3756,7 +3756,7 @@ top: 23px;
 }
 @-o-keyframes loading2 {
  10% {
- background: #173C08;
+ background: #334667;
 }
  15% {
  -webkit-transform: scaleY(1.2) translateX(10px);
@@ -3764,7 +3764,7 @@ top: 23px;
  -ms-transform: scaleY(1.2) translateX(10px);
  -o-transform: scaleY(1.2) translateX(10px);
  transform: scaleY(1.2) translateX(10px);
- background: #173C08;
+ background: #334667;
 }
  90%, 100% {
  -webkit-transform: scaleY(0.05) translateX(-5px);
@@ -3776,7 +3776,7 @@ top: 23px;
 }
 @keyframes loading2 {
  10% {
- background: #173C08;
+ background: #334667;
 }
  15% {
  -webkit-transform: scaleY(1.2) translateX(10px);
@@ -3784,7 +3784,7 @@ top: 23px;
  -ms-transform: scaleY(1.2) translateX(10px);
  -o-transform: scaleY(1.2) translateX(10px);
  transform: scaleY(1.2) translateX(10px);
- background: #173C08;
+ background: #334667;
 }
  90%, 100% {
  -webkit-transform: scaleY(0.05) translateX(-5px);
@@ -3902,28 +3902,28 @@ top: 23px;
  50% {
  height: 100%;
  margin-top: 0;
- background: #173C08;
+ background: #334667;
 }
 }
 @-moz-keyframes loading5 {
  50% {
  height: 100%;
  margin-top: 0;
- background: #173C08;
+ background: #334667;
 }
 }
 @-o-keyframes loading5 {
  50% {
  height: 100%;
  margin-top: 0;
- background: #173C08;
+ background: #334667;
 }
 }
 @keyframes loading5 {
  50% {
  height: 100%;
  margin-top: 0;
- background: #173C08;
+ background: #334667;
 }
 }
 
@@ -4019,28 +4019,28 @@ top: 23px;
  50% {
  height: 100%;
  margin-top: 0;
- background: #173C08;
+ background: #334667;
 }
 }
 @-moz-keyframes loading5 {
  50% {
  height: 100%;
  margin-top: 0;
- background: #173C08;
+ background: #334667;
 }
 }
 @-o-keyframes loading5 {
  50% {
  height: 100%;
  margin-top: 0;
- background: #173C08;
+ background: #334667;
 }
 }
 @keyframes loading5 {
  50% {
  height: 100%;
  margin-top: 0;
- background: #173C08;
+ background: #334667;
 }
 }
 .tsperloader_loader4 {
@@ -4068,7 +4068,7 @@ top: 23px;
  height: 100%;
  transform: skewY(0);
  margin-top: 0;
- background: #173C08;
+ background: #334667;
 }
  75% {
  transform: skewY(-25deg);
@@ -4082,7 +4082,7 @@ top: 23px;
  height: 100%;
  transform: skewY(0);
  margin-top: 0;
- background: #173C08;
+ background: #334667;
 }
  75% {
  transform: skewY(-25deg);
@@ -4096,7 +4096,7 @@ top: 23px;
  height: 100%;
  transform: skewY(0);
  margin-top: 0;
- background: #173C08;
+ background: #334667;
 }
  75% {
  transform: skewY(-25deg);
@@ -4110,7 +4110,7 @@ top: 23px;
  height: 100%;
  transform: skewY(0);
  margin-top: 0;
- background: #173C08;
+ background: #334667;
 }
  75% {
  transform: skewY(-25deg);
@@ -4145,7 +4145,7 @@ top: 23px;
 	margin-left: -100px;
 }
 #tsperloader29 span {
-	background: #173C08 none repeat scroll 0 0;
+	background: #334667 none repeat scroll 0 0;
 	border-radius: 0;
 	display: inline-block;
 	height: 15px;
@@ -4299,13 +4299,13 @@ top: 23px;
  25% {
  -webkit-transform: scale(0.9, 0.9);
  transform: scale(0.9, 0.9);
- background: #173C08;
+ background: #334667;
 }
  50% {
  -webkit-transform: scale(1, 1);
  transform: scale(1, 1);
  margin: 0 3px;
- background: #173C08;
+ background: #334667;
 }
  100% {
  -webkit-transform: scale(0);
@@ -4320,13 +4320,13 @@ top: 23px;
  25% {
  -webkit-transform: scale(0.9, 0.9);
  transform: scale(0.9, 0.9);
- background: #173C08;
+ background: #334667;
 }
  50% {
  -webkit-transform: scale(1, 1);
  transform: scale(1, 1);
  margin: 0 3px;
- background: #173C08;
+ background: #334667;
 }
  100% {
  -webkit-transform: scale(0);
@@ -4341,7 +4341,7 @@ top: 23px;
  50% {
  -webkit-transform: rotateY(90deg);
  transform: rotateY(90deg);
- background: #173C08;
+ background: #334667;
 }
  100% {
  -webkit-transform: rotateY(0deg);
@@ -4356,7 +4356,7 @@ top: 23px;
  50% {
  -webkit-transform: rotateY(90deg);
  transform: rotateY(90deg);
- background: #173C08;
+ background: #334667;
 }
  100% {
  -webkit-transform: rotateY(0deg);
@@ -4371,7 +4371,7 @@ top: 23px;
  50% {
  -webkit-transform: rotateX(90deg) scale(0.5, 0.5);
  transform: rotateX(90deg) scale(0.5, 0.5);
- background: #173C08;
+ background: #334667;
 }
  100% {
  -webkit-transform: rotateX(0deg);
@@ -4386,7 +4386,7 @@ top: 23px;
  50% {
  -webkit-transform: rotateX(90deg) scale(0.5, 0.5);
  transform: rotateX(90deg) scale(0.5, 0.5);
- background: #173C08;
+ background: #334667;
 }
  100% {
  -webkit-transform: rotateX(0deg);
@@ -4401,7 +4401,7 @@ top: 23px;
  50% {
  -webkit-transform: translateY(-20px) scale(0.7, 1.1);
  transform: translateY(-20px) scale(0.7, 1.1);
- background: #173C08;
+ background: #334667;
 }
  100% {
  -webkit-transform: translateX(0px) scale(0.9, 0.6);
@@ -4416,7 +4416,7 @@ top: 23px;
  50% {
  -webkit-transform: translateY(-20px) scale(0.7, 1.1);
  transform: translateY(-20px) scale(0.7, 1.1);
- background: #173C08;
+ background: #334667;
 }
  100% {
  -webkit-transform: translateX(0px) scale(0.9, 0.6);
@@ -4431,7 +4431,7 @@ top: 23px;
  50% {
  -webkit-transform: rotateZ(20deg) scaleY(1.2);
  transform: rotateZ(20deg) scaleY(1.2);
- background: #173C08;
+ background: #334667;
 }
  100% {
  -webkit-transform: rotateZ(-20deg);
@@ -4446,7 +4446,7 @@ top: 23px;
  50% {
  -webkit-transform: rotateZ(20deg) scaleY(1.2);
  transform: rotateZ(20deg) scaleY(1.2);
- background: #173C08;
+ background: #334667;
 }
  100% {
  -webkit-transform: rotateZ(-20deg);
@@ -4457,52 +4457,52 @@ top: 23px;
  0% {
  -webkit-transform: rotateY(-90deg) perspective(50px);
  transform: rotateY(-90deg) perspective(50px);
- background: #173C08;
+ background: #334667;
 }
  50% {
  -webkit-transform: rotateY(0deg);
  transform: rotateY(0deg);
- background: #173C08;
+ background: #334667;
 }
  100% {
  -webkit-transform: rotateY(90deg) perspective(50px);
  transform: rotateY(90deg) perspective(50px);
  -webkit-transform-origin: 100% 50%;
  transform-origin: 100% 50%;
- background: #173C08;
+ background: #334667;
 }
 }
 @keyframes cuve {
  0% {
  -webkit-transform: rotateY(-90deg) perspective(50px);
  transform: rotateY(-90deg) perspective(50px);
- background: #173C08;
+ background: #334667;
 }
  50% {
  -webkit-transform: rotateY(0deg);
  transform: rotateY(0deg);
- background: #173C08;
+ background: #334667;
 }
  100% {
  -webkit-transform: rotateY(90deg) perspective(50px);
  transform: rotateY(90deg) perspective(50px);
  -webkit-transform-origin: 100% 50%;
  transform-origin: 100% 50%;
- background: #173C08;
+ background: #334667;
 }
 }
 @-webkit-keyframes temp {
  50% {
  -webkit-transform: scale(1, 5);
  transform: scale(1, 5);
- background: #173C08;
+ background: #334667;
 }
 }
 @keyframes temp {
  50% {
  -webkit-transform: scale(1, 5);
  transform: scale(1, 5);
- background: #173C08;
+ background: #334667;
 }
 }
 
@@ -4532,7 +4532,7 @@ top: 23px;
 	display: inline-block;
 	height: 15px;
 	width: 15px;
-	background: #173C08;
+	background: #334667;
 	border-radius: 0px;
 }
  #absolute30 span:nth-child(1) {
@@ -4614,7 +4614,7 @@ top: 23px;
 	display: inline-block;
 	height: 15px;
 	width: 15px;
-	background: #173C08;
+	background: #334667;
 	border-radius: 0px;
 }
  #absolute31 span:nth-child(1) {
@@ -4668,7 +4668,7 @@ top: 23px;
 	display: inline-block;
 	height: 15px;
 	width: 15px;
-	background: #173C08;
+	background: #334667;
 	border-radius: 0px;
 }
  #absolute32 span:nth-child(1) {
@@ -4752,7 +4752,7 @@ top: 23px;
 .loading-effect-33 span:first-child {
 	width: 100%;
 	height: 100%;
-	border-color: #173C08;
+	border-color: #334667;
 	border-left-color: transparent;
 	top: 0;
 	left: 0;
@@ -4765,7 +4765,7 @@ top: 23px;
 .loading-effect-33 span:nth-child(2) {
  width: 75%;
  height: 75%;
- border-color: #173C08;
+ border-color: #334667;
  border-right-color: transparent;
  top: 12.5%;
  left: 12.5%;
@@ -4887,7 +4887,7 @@ to {
 	content: "";
 	display: block;
 	border-radius: 50%;
-	border: 2px solid #173C08;
+	border: 2px solid #334667;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -4985,7 +4985,7 @@ to {
 .loading-effect-35 > div {
 	width: 100%;
 	height: 100%;
-	border: 1px solid #173C08;
+	border: 1px solid #334667;
 	border-radius: 50%;
 }
 .loading-effect-35 span {
@@ -5015,7 +5015,7 @@ to {
 	animation: effect-4-1 1.5s infinite linear;
 }
 .loading-effect-35 span:nth-child(2) {
- background: #173C08;
+ background: #334667;
  -webkit-animation: effect-4-1 2s infinite linear;
  -moz-animation: effect-4-1 2s infinite linear;
  -ms-animation: effect-4-1 2s infinite linear;
@@ -5167,7 +5167,7 @@ background-color: rgb(255, 100, 100);
 background-color: rgb(255, 25, 25);
 }
  100% {
-background-color: #173C08;
+background-color: #334667;
 }
 }
 @keyframes windcatcherBg {
@@ -5308,9 +5308,9 @@ opacity: 0;
 	position: absolute;
 	width: 4em;
 	height: 4em;
-	background: #173C08;
+	background: #334667;
 	opacity: 0;
-	box-shadow: -0.08em 0.15em 0 #173C08;
+	box-shadow: -0.08em 0.15em 0 #334667;
 	-webkit-transform-origin: 50% 0%;
 	transform-origin: 50% 0%;
 	-webkit-animation: slabMove 4s linear infinite;
@@ -5474,7 +5474,7 @@ transform: rotate(-70deg);
  top: 0;
  left: 50%;
  bottom: 1em;
- background: linear-gradient(transparent, #173C08);
+ background: linear-gradient(transparent, #334667);
 }
 .tsspinner.newton .tsball {
 	-webkit-animation: newtonBallMiddle 1s infinite alternate;
@@ -5618,7 +5618,7 @@ to {
 	width: 100%;
 	height: 100%;
 	background: radial-gradient(circle, white, rgb(210, 210, 210));
-	border: 0.2em solid #173C08;
+	border: 0.2em solid #334667;
 	border-radius: 100%;
 	box-sizing: border-box;
 	-webkit-animation: bounce 1.5s infinite;
@@ -5630,7 +5630,7 @@ to {
 	width: 0.2em;
 	left: 50%;
 	margin-left: -0.1em;
-	background-color: #173C08;
+	background-color: #334667;
 	border-radius: 0 0 0.2em 0.2em;
 	-webkit-transform-origin: 50% 100%;
 	transform-origin: 50% 100%;
@@ -5716,7 +5716,7 @@ transform: rotateX(0deg) rotateY(360deg);
 	width: 100%;
 	height: 100%;
 	border-radius: 100%;
-	border: 0.3em dotted #173C08;
+	border: 0.3em dotted #334667;
 }
  @-webkit-keyframes rotateDisc2 {
  from {
@@ -5826,8 +5826,8 @@ to {
 	box-sizing: border-box;
 	border-left: 0.5em solid transparent;
 	border-right: 0.5em solid transparent;
-	border-bottom: 0.5em solid #173C08;
-	border-top: 0.5em solid #173C08;
+	border-bottom: 0.5em solid #334667;
+	border-top: 0.5em solid #334667;
 	-webkit-animation: rotate 0.8s linear infinite;
 	animation: rotate 0.8s linear infinite;
 }
@@ -8227,7 +8227,7 @@ transform:rotate(360deg);
 	-moz-backface-visibility: hidden;
 }
 .tscssload-plane {
-	background: #173C08;
+	background: #334667;
 	width: 400%;
 	height: 100%;
 	position: absolute;
@@ -8700,7 +8700,7 @@ to {
  -moz-animation: cssload-load 0.35s linear -1.96s infinite alternate;
 }
 .csstscssload-load-frame .tscssload-dot:nth-child(18) {
- background: #173C08;
+ background: #334667;
  animation: cssload-load 0.35s linear -2.07s infinite alternate;
  -o-animation: cssload-load 0.35s linear -2.07s infinite alternate;
  -ms-animation: cssload-load 0.35s linear -2.07s infinite alternate;
@@ -8708,7 +8708,7 @@ to {
  -moz-animation: cssload-load 0.35s linear -2.07s infinite alternate;
 }
 .csstscssload-load-frame .tscssload-dot:nth-child(19) {
- background: #173C08;
+ background: #334667;
  animation: cssload-load 0.35s linear -2.19s infinite alternate;
  -o-animation: cssload-load 0.35s linear -2.19s infinite alternate;
  -ms-animation: cssload-load 0.35s linear -2.19s infinite alternate;
@@ -8716,7 +8716,7 @@ to {
  -moz-animation: cssload-load 0.35s linear -2.19s infinite alternate;
 }
 .csstscssload-load-frame .tscssload-dot:nth-child(20) {
- background: #173C08;
+ background: #334667;
  animation: cssload-load 0.35s linear -2.3s infinite alternate;
  -o-animation: cssload-load 0.35s linear -2.3s infinite alternate;
  -ms-animation: cssload-load 0.35s linear -2.3s infinite alternate;
@@ -8724,7 +8724,7 @@ to {
  -moz-animation: cssload-load 0.35s linear -2.3s infinite alternate;
 }
 .csstscssload-load-frame .tscssload-dot:nth-child(21) {
- background: #173C08;
+ background: #334667;
  animation: cssload-load 0.35s linear -2.42s infinite alternate;
  -o-animation: cssload-load 0.35s linear -2.42s infinite alternate;
  -ms-animation: cssload-load 0.35s linear -2.42s infinite alternate;
@@ -8732,7 +8732,7 @@ to {
  -moz-animation: cssload-load 0.35s linear -2.42s infinite alternate;
 }
 .csstscssload-load-frame .tscssload-dot:nth-child(22) {
- background: #173C08;
+ background: #334667;
  animation: cssload-load 0.35s linear -2.53s infinite alternate;
  -o-animation: cssload-load 0.35s linear -2.53s infinite alternate;
  -ms-animation: cssload-load 0.35s linear -2.53s infinite alternate;
@@ -8740,7 +8740,7 @@ to {
  -moz-animation: cssload-load 0.35s linear -2.53s infinite alternate;
 }
 .csstscssload-load-frame .tscssload-dot:nth-child(23) {
- background: #173C08;
+ background: #334667;
  animation: cssload-load 0.35s linear -2.65s infinite alternate;
  -o-animation: cssload-load 0.35s linear -2.65s infinite alternate;
  -ms-animation: cssload-load 0.35s linear -2.65s infinite alternate;
@@ -8748,7 +8748,7 @@ to {
  -moz-animation: cssload-load 0.35s linear -2.65s infinite alternate;
 }
 .csstscssload-load-frame .tscssload-dot:nth-child(24) {
- background: #173C08;
+ background: #334667;
  animation: cssload-load 0.35s linear -2.76s infinite alternate;
  -o-animation: cssload-load 0.35s linear -2.76s infinite alternate;
  -ms-animation: cssload-load 0.35s linear -2.76s infinite alternate;
@@ -8756,7 +8756,7 @@ to {
  -moz-animation: cssload-load 0.35s linear -2.76s infinite alternate;
 }
 .csstscssload-load-frame .tscssload-dot:nth-child(25) {
- background: #173C08;
+ background: #334667;
  animation: cssload-load 0.35s linear -2.88s infinite alternate;
  -o-animation: cssload-load 0.35s linear -2.88s infinite alternate;
  -ms-animation: cssload-load 0.35s linear -2.88s infinite alternate;

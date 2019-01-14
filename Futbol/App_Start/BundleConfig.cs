@@ -46,7 +46,10 @@ namespace Futbol
                       "~/Content/js/calendar/fullcalendar-active.js",
                       "~/Content/js/plugins.js",
                       "~/Content/js/main.js",
-                      "~/Content/js/tawk-chat.js"));
+                      "~/Content/js/tawk-chat.js",
+                      "~/Scripts/bootbox.js",
+                      "~/Scripts/datatables/jquery.datatables.js",
+                      "~/Scripts/datatables/datatables.bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/css/bootstrap.min.css",
@@ -66,7 +69,8 @@ namespace Futbol
                       "~/Content/css/calendar/fullcalendar.min.css",
                       "~/Content/css/calendar/fullcalendar.print.min.css",
                       "~/Content/style.css",
-                      "~/Content/css/responsive.css"));
+                      "~/Content/css/responsive.css",
+                      "~/Content/datatables/css/datatables.bootstrap.css"));
         }
     }
 }

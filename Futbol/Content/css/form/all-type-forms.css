@@ -2058,19 +2058,19 @@ width: 26px !important;
 }
 
 .ui-datepicker{
-	background:#173C08;
+	background:#334667;
 	width: 300px;
 	padding:10px;
 }
 .ui-datepicker-header{
-	background:#173C08;
+	background:#334667;
 	margin:0px;
 }
 .ui-datepicker-prev, .ui-datepicker-next{
 	font-size:14px;
 	color:#fff;
-	border-left: 1px solid #173C08;
-	border-right: 1px solid #173C08;
+	border-left: 1px solid #334667;
+	border-right: 1px solid #334667;
 	line-height: 33px;
 }
 .ui-datepicker-header a{

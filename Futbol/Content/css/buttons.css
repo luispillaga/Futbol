@@ -172,11 +172,11 @@
 	vertical-align: middle; 
 }
 .button-drop-style-one .btn-button-ct.btn-button-primary-ct{
-    background: #337ab7;
-	border-right:1px solid #337ab7;
-	border-left:0px solid #337ab7;
-	border-top:1px solid #337ab7;
-	border-bottom:1px solid #337ab7;
+    background: #44AACE;
+	border-right:1px solid #44AACE;
+	border-left:0px solid #44AACE;
+	border-top:1px solid #44AACE;
+	border-bottom:1px solid #44AACE;
 	color: #fff;
 	vertical-align: middle; 
 }
@@ -273,8 +273,8 @@
 	background:#303030;
 }
 .btn-default.btn-bg-cl-social:hover{
-	background:#173C08;
-	border-color: #173C08;
+	background:#334667;
+	border-color: #334667;
 }
 .btn-default.btn-bg-cl-social-tw .edu-icon, .btn-default.btn-bg-cl-social-tw i{
 	color:#fff;

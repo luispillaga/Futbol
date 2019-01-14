@@ -34,7 +34,7 @@ $(function() {
 			{
 				title: 'All Day Event',
 				start: YM + '-01',
-				color: '#173C08'
+				color: '#334667'
 			},
 			{
 				title: 'Long Event',
