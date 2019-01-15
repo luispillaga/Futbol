@@ -20,6 +20,16 @@ namespace Futbol.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        //public DbSet<Provincia> Provincias { get; set; }
+        //public DbSet<Ciudad> Ciudads { get; set; }
+        //public DbSet<Direccion> Direccions { get; set; }
+        //public DbSet<Imagen> Imagens { get; set; }
+        //public DbSet<Torneo> Torneos { get; set; }
+        //public DbSet<TorneoEquipo> TorneoEquipos { get; set; }
+        //public DbSet<Equipo> Equipos { get; set; }
+        //public DbSet<Jugador> Jugadors { get; set; }
+        //public DbSet<Pago> Pagos { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

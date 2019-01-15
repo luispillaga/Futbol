@@ -11,7 +11,6 @@ namespace Futbol.Models
         public int Id { get; set; }
         [Display(Name = "Nombre")]
         [Required(ErrorMessage = "El campo {0} es requerido")]
-        [DataType(DataType.PhoneNu)]
         public string Nombre { get; set; }
     }
 }

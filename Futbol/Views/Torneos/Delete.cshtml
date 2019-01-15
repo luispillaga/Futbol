@@ -1,0 +1,89 @@
+﻿@model Futbol.Torneo
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Torneo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.torneo_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.torneo_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.torneo_fecha_inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.torneo_fecha_inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.torneo_hora_inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.torneo_hora_inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.torneo_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.torneo_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.torneo_precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.torneo_precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.torneo_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.torneo_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion.direccion_calle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion.direccion_calle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Imagen.imagen_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Imagen.imagen_title)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

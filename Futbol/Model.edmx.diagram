@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="339a5b6eef2843c5b992ad262e37d250" Name="Diagram1">
+        <EntityTypeShape EntityType="FutbolModel.Alineacion" Width="1.5" PointX="10.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.Ciudad" Width="1.5" PointX="1.5" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.Direccion" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.Equipo" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.Estadistica" Width="1.5" PointX="15.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.FaseEliminatoria" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.FaseEquipo" Width="1.5" PointX="13.5" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.FaseGrupo" Width="1.5" PointX="1.5" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.Grupo" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.Imagen" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.Jornada" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.Jugador" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.JugadorScore" Width="1.5" PointX="8.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.Noticia" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.Pago" Width="1.5" PointX="10.5" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.Partido" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.Provincia" Width="1.5" PointX="1.5" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.Resultado" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.Sancion" Width="1.5" PointX="7.5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.Torneo" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="FutbolModel.TorneoEquipo" Width="1.5" PointX="8.25" PointY="10.375" IsExpanded="true" />
+        <AssociationConnector Association="FutbolModel.FK_JugadorAlineacion" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_JugadorScoreAlineacion" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_PartidoAlineacion" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_CiudadDireccion" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_ProvinciaCiudad" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_DireccionTorneo" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_EquipoJugador" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_EquipoTorneoEquipo" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_ImagenEquipo" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_FaseEquipoEstadistica" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_FaseEliminatoriaJornada" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_FaseEliminatoriaFaseEquipo" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_GrupoFaseEquipo" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_TorneoEquipoFaseEquipo" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_FaseGrupoGrupo" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_GrupoJornada" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_ImagenJugador" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_ImagenNoticia" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_ImagenTorneo" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_JornadaPartido" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_JugadorSancion" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_TorneoNoticia" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_TorneoEquipoPago" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_PartidoResultado" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_PartidoSancion" ManuallyRouted="false" />
+        <AssociationConnector Association="FutbolModel.FK_TorneoTorneoEquipo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

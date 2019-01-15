@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Futbol.Torneo>
+
+@{
+    ViewBag.Title = "ListaTorneos";
+    Layout = "~/Views/Shared/_LayoutLogIn.cshtml";
+}
+
+<h2>Bienvenido</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.torneo_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.torneo_fecha_inicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.torneo_hora_inicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.torneo_estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.torneo_precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.torneo_descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion.direccion_calle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Imagen.imagen_title)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.torneo_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.torneo_fecha_inicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.torneo_hora_inicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.torneo_estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.torneo_precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.torneo_descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direccion.direccion_calle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Imagen.imagen_title)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.torneo_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.torneo_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.torneo_id })
+        </td>
+    </tr>
+}
+
+</table>
