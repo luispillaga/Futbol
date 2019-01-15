@@ -216,8 +216,16 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Ciudad.cs" />
+    <Compile Include="Models\Direccion.cs" />
+    <Compile Include="Models\Equipo.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Imagen.cs" />
+    <Compile Include="Models\Jugador.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Provincia.cs" />
+    <Compile Include="Models\Torneo.cs" />
+    <Compile Include="Models\TorneoEquipo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
