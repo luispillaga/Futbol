@@ -4778,8 +4778,25 @@ div#sparklinehome canvas {
 .form-login {
 	padding-top: 20px;
 }
-@media only screen and (min-width: 765px){
-	.contenedor-login {
+.white-box-logo {
+    background: #ffffff;
+    height: 80px;
+    margin: 0 auto 0 auto;
+    padding: 0px 0px 70px 0px;
+    max-width: 300px;
+    border: 1px solid #ffffff;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+}
+.pad-top-bot {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+
+@media only screen and (min-width: 765px) {
+    .contenedor-login {
 		max-width: 500px;
 	}
 }
