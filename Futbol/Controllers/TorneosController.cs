@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Futbol;
+using Futbol.Models;
+using Futbol.ModelViews;
 
 namespace Futbol.Controllers
 {
@@ -14,7 +16,25 @@ namespace Futbol.Controllers
     {
         private FutbolEntities db = new FutbolEntities();
 
+
+        public ActionResult TorneoHome(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var singleton = ConfiguracionSingleton.GetInstance();
+            singleton.configuracion.IdTorneo = id;
+            var torneo = db.Torneo.Find(id);
+            if (torneo == null)
+            {
+                return HttpNotFound();
+            }
+            return View(torneo);
+        }
+
         // GET: Torneos
+
         public ActionResult Index()
         {
             var torneo = db.Torneo.Include(t => t.Direccion).Include(t => t.Imagen);
@@ -44,6 +64,32 @@ namespace Futbol.Controllers
             return View();
         }
 
+        //GET: Torneos/RegisterTorneo
+        public ActionResult RegisterTorneo()
+        {
+            ViewBag.provincia_id = new SelectList(db.Provincia, "Id", "Nombre");
+
+            var provincias = db.Provincia.ToList();
+            var viewModel = new TorneoFormViewModel();
+            
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RegisterTorneo(TorneoFormViewModel torneo)
+        {
+            //if (ModelState.IsValid)
+            //{
+            //    db.Torneo.Add(torneo);
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
+
+            //ViewBag.direccion_id = new SelectList(db.Direccion, "direccion_id", "direccion_calle", torneo.direccion_id);
+            //ViewBag.imagen_id = new SelectList(db.Imagen, "imagen_id", "imagen_title", torneo.imagen_id);
+            return View(torneo);
+        }
 
         // GET: Torneos/ListaTorneos
         public ActionResult ListaTorneos()

@@ -1,0 +1,43 @@
+﻿@model Futbol.TorneoEquipo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TorneoEquipo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tor_equ_fecha_inscripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tor_equ_fecha_inscripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Equipo.equipo_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Equipo.equipo_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Torneo.torneo_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Torneo.torneo_nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.tor_equ_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

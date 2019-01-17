@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace Futbol
 {
     using System;
@@ -21,6 +23,9 @@ namespace Futbol
         }
     
         public int Id { get; set; }
+
+        [Display(Name = "Nombre")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
         public string Nombre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

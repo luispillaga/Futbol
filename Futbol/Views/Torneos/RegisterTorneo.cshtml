@@ -1,0 +1,151 @@
+﻿@model Futbol.ModelViews.TorneoFormViewModel
+
+@{
+    ViewBag.Title = "RegisterTorneo";
+    Layout = "~/Views/Shared/_LayoutTorneo.cshtml";
+}
+
+<h2>RegisterTorneo</h2>
+
+
+@using (Html.BeginForm("RegisterTorneo", "Torneos", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Torneo</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.torneo_nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.torneo_nombre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.torneo_nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.torneo_fecha_inicio, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.torneo_fecha_inicio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.torneo_fecha_inicio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.torneo_hora_inicio, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.torneo_hora_inicio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.torneo_hora_inicio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.torneo_estado, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.torneo_estado, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.torneo_estado, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.torneo_precio, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.torneo_precio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.torneo_precio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.torneo_descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.torneo_descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.torneo_descripcion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.provincia_id, "Provincia", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("provincia_id", null, "Seleccione una provincia", htmlAttributes: new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.provincia_id, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.ciudad_id, "Ciudad", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ciudad_id", new SelectList(string.Empty, "Id", "Name"), "Seleccione una ciudad", htmlAttributes: new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.ciudad_id, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Direccion.direccion_calle, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Direccion.direccion_calle, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Direccion.direccion_calle, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.Direccion.direccion_referencia, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Direccion.direccion_referencia, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Direccion.direccion_referencia, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Imagen.imagen_path, htmlAttributes: new { @class = "nk-label" })
+            <div class="col-md-10">
+                <input type="file" name="Imagen.ImageFile" required />
+                @Html.ValidationMessageFor(model => model.Imagen.imagen_path, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script>
+        $(document).ready(function () {
+
+            $("#provincia_id").change(function () {
+                var id = JSON.stringify();
+                $("#ciudad_id").empty();
+                $.ajax({
+                    type: 'POST',
+                    contentType: 'application/json',
+                    url: "/Ciudades/ObtenerCiudades",
+                    datatype: 'json',
+                    data: JSON.stringify({ 'id_pro': $("#provincia_id").val()}),
+                    // here we are get value of selected country and passing same value as inputto json method GetStates.
+
+                    success: function (data) {
+                        $.each(data, function (i, ciudad) {  
+                            $("#ciudad_id").append('<option value="' + ciudad.Id + '">' +    
+                                ciudad.Nombre + '</option>');                                                                                                  
+                            // here we are adding option for States  
+   
+                        });  
+                    },
+                    error: function(error){
+                        console.log(JSON.stringify(error));
+                    }
+                });
+                return false;
+            });
+        });
+</script>
+}

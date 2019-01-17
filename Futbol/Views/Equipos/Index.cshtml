@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Futbol.Equipo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+@ViewBag.IdTorneo
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.equipo_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.equipo_representante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.equipo_celular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.equipo_telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.equipo_estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Imagen.imagen_title)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.equipo_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.equipo_representante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.equipo_celular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.equipo_telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.equipo_estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Imagen.imagen_title)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.equipo_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.equipo_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.equipo_id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -7,6 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Web;
+
 namespace Futbol
 {
     using System;
@@ -25,6 +29,7 @@ namespace Futbol
     
         public int imagen_id { get; set; }
         public string imagen_title { get; set; }
+        [Display(Name = "Imagen")]
         public string imagen_path { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -35,5 +40,8 @@ namespace Futbol
         public virtual ICollection<Noticia> Noticia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Torneo> Torneo { get; set; }
+        [NotMapped]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        public HttpPostedFileBase ImageFile { get; set; }
     }
 }

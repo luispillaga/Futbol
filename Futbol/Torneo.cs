@@ -7,6 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Web;
+
 namespace Futbol
 {
     using System;
@@ -22,11 +26,37 @@ namespace Futbol
         }
     
         public int torneo_id { get; set; }
+
+        [Display(Name = "Nombre")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(100)]
+        [DataType(DataType.Text)]
         public string torneo_nombre { get; set; }
+
+        [Display(Name = "Fecha Inicio")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [DataType(DataType.Date)]
         public System.DateTime torneo_fecha_inicio { get; set; }
+
+        [DataType(DataType.Time)]
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{H:mm:ss}")]
         public System.TimeSpan torneo_hora_inicio { get; set; }
+
+        [Display(Name = "Estado")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(20)]
+        [DataType(DataType.Text)]
         public string torneo_estado { get; set; }
+
+        [Display(Name = "Precio")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [DataType(DataType.Currency)]
         public decimal torneo_precio { get; set; }
+
+        [Display(Name = "Descripción")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(200)]
+        [DataType(DataType.MultilineText)]
         public string torneo_descripcion { get; set; }
         public Nullable<int> direccion_id { get; set; }
         public Nullable<int> imagen_id { get; set; }
@@ -37,5 +67,9 @@ namespace Futbol
         public virtual ICollection<Noticia> Noticia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TorneoEquipo> TorneoEquipo { get; set; }
+
+        [NotMapped]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        public HttpPostedFileBase ImageFile { get; set; }
     }
 }
