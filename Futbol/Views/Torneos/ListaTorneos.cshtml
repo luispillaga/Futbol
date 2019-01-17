@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Futbol.Torneo>
+
+@{
+    ViewBag.Title = "ListaTorneos";
+    Layout = "~/Views/Shared/_LayoutTorneo.cshtml";
+}
+
+<div class="pad-top-bot title-torneo">
+    <h4>Hola Usuario</h4>
+    <h4>Seleccione un torneo</h4>
+</div>
+
+<div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 margin-top-bot">
+        <a href="@Url.Action("RegisterTorneo", "Torneos")">
+            <div class="torneo-box">
+                <div class="torneo-image">
+                    <img class="img-torneo" src="@Url.Content("../../Content/img/espe-images/plus2.svg")" alt="Alternate Text" />
+                </div>
+                <div class="torneo-text">
+                    <h5>Crear Torneo</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 margin-top-bot">
+            <a href="@Url.Action("TorneoHome","Torneos", new { id = item.torneo_id })">
+                <div class="torneo-box">
+                    <div class="torneo-image">
+                        @if (item.Imagen.imagen_path == null)
+                        {
+                            <img class="img-torneo" src="@Url.Content("../../Content/img/espe-images/trofeo2.svg")" alt="Alternate Text" />
+                        }
+                        else
+                        {
+                            <img class="img-torneo" src="@Url.Content(item.Imagen.imagen_path)" alt="Alternate Text" />
+                        }
+                    </div>
+                    <div class="torneo-text">
+                        <h5>@item.torneo_nombre</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    }
+</div>
