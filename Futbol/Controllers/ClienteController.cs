@@ -15,28 +15,33 @@ namespace Futbol.Controllers
 
         public ActionResult TorneoIndex()
         {
-            
-            ViewBag.listatorneo = db.Torneo.ToList();
-                
+            var conf = ConfiguracionSingleton.GetInstance();
+            conf.configuracion.Torneos = db.Torneo.ToList(); 
+            ViewBag.listatorneo = conf.configuracion.Torneos;
+            ViewBag.IdTorneoCliente = conf.configuracion.IdTorneoCliente;    
             return View();
           
           
         }
 
-
-        public ActionResult EquipoJugador(int? id, List<Torneo> listatorneos)
+        public ActionResult EquipoJugador(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            var conf = ConfiguracionSingleton.GetInstance();
+            conf.configuracion.Torneos = db.Torneo.ToList();
+            conf.configuracion.IdTorneoCliente = id;
+
+            ViewBag.listatorneo = conf.configuracion.Torneos;
+            ViewBag.IdTorneoCliente = conf.configuracion.IdTorneoCliente;
             Torneo torneo = db.Torneo.Find(id);
             ViewBag.mitorneo = torneo;
             if (torneo== null)
             {
                 return HttpNotFound();
             }
-            ViewBag.listatorneo = listatorneos;
             return View(torneo);
             
             

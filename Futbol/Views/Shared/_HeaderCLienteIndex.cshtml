@@ -8,26 +8,22 @@
                             <div class="col-lg-4 col-md-3 col-sm-4 col-xs-5 ">
                                 <div class="menu-switcher-pro">
                                     <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                        <li class="nav-item">
-                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                                                <span class="admin-name">Noticias</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                                                <span class="admin-name">Torneo 1</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                                                <span class="admin-name">Torneo 2</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                                                <span class="admin-name">+</span>
-                                            </a>
-                                        </li>
+                                        @if (ViewBag.IdTorneoCliente == null)
+                                        {
+                                            <li class="nav-item">
+                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                    <span class="admin-name">Noticias</span>
+                                                </a>
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                            <li class="nav-item">
+                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                    <span class="admin-name">Noticias</span>
+                                                </a>
+                                            </li>
+                                        }
                                     </ul>
                                 </div>
                             </div>
