@@ -1,0 +1,40 @@
+﻿@model Futbol.Torneo
+@{
+    ViewBag.Title = "LeftPanel";
+}
+
+
+
+<!-- Start Left menu area -->
+<div class="left-sidebar-pro">
+    <nav id="sidebar" class="">
+        <div class="sidebar-header">
+            <a href="index.html"><img runat="server" class="main-logo padding-logo" src="@Url.Content("../../Content/img/logo/logo.svg")" alt="" /></a>
+            <strong><a href="index.html"><img src="img/logo/logosn.png" alt="" /></a></strong>
+        </div>
+        <div class="left-custom-menu-adp-wrap comment-scrollbar">
+            <nav class="sidebar-nav left-sidebar-menu-pro">
+                <ul class="metismenu" id="menu1">
+                    <li class="active">
+                        <a class="has-arrow" href="index.html">
+                            <span class="mini-click-non">Torneos</span>
+                        </a>
+                        <ul class="submenu-angle" aria-expanded="true">
+
+                            @foreach (var item in ViewBag.listatorneo)
+                                {
+
+                                    <li><a title="Dashboard v.1" href='@Url.Action( "EquipoJugador", "Cliente",new {id=item.torneo_id, listatorneo = ViewBag.listatorneo})'><span class="mini-sub-pro">@item.torneo_nombre </span></a></li>
+
+                                }
+
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </nav>
+        </div>
+    </nav>
+</div>
+<!-- End Left menu area -->

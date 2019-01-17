@@ -1,0 +1,25 @@
+﻿@model  Futbol.Torneo
+@{
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+
+
+@ViewBag.listatorneo
+<h2>@ViewBag.listatorneo</h2>
+<h2>TorneoIndex</h2>
+<div class="tab-content-details shadow-reset">
+
+
+    @foreach (var item in ViewBag.listatorneo)
+    {
+        <tr>
+            <td>
+                @item.torneo_nombre
+            </td>
+            
+        </tr>
+    }
+</div>
+
+
+
