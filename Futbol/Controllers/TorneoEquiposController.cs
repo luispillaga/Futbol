@@ -21,18 +21,7 @@ namespace Futbol.Controllers
             return View(torneoEquipo.ToList());
         }
 
-        public ActionResult Buscar_por_Torneo(int? id_torneo)
-        {
-            var torneoEquipo = db.TorneoEquipo.Include(t => t.Equipo).Include(t => t.Torneo);
-            List<TorneoEquipo> todos = torneoEquipo.ToList();
-            List<TorneoEquipo> equipos_torneo = new List<TorneoEquipo>();
-            foreach (var item in todos) {
-                if(item.torneo_id==id_torneo)
-                equipos_torneo.Add(item);
-            }
-            ViewBag.equipos_torneo = equipos_torneo;
-            return RedirectToAction("Index","Equipos");
-        }
+       
 
 
         // GET: TorneoEquipos/Details/5
