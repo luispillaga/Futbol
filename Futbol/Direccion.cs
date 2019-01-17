@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace Futbol
 {
     using System;
@@ -21,7 +23,16 @@ namespace Futbol
         }
     
         public int direccion_id { get; set; }
+
+        [Display(Name = "Calle")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(100)]
         public string direccion_calle { get; set; }
+
+        [Display(Name = "Referencia")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(200)]
+        [DataType(DataType.MultilineText)]
         public string direccion_referencia { get; set; }
         public Nullable<int> ciuadad_id { get; set; }
     

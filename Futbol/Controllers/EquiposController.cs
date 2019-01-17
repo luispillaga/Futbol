@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Futbol;
+using Futbol.Models;
 
 namespace Futbol.Controllers
 {
@@ -41,10 +42,9 @@ namespace Futbol.Controllers
                 }
             }
 
+            var conf = ConfiguracionSingleton.GetInstance();
+            ViewBag.IdTorneo = conf.configuracion.IdTorneo;
 
-
-
-            
             return View(lista_equipos);
         }
 

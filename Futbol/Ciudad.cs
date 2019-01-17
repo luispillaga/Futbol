@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace Futbol
 {
     using System;
@@ -21,6 +23,10 @@ namespace Futbol
         }
     
         public int Id { get; set; }
+
+        [Display(Name = "Nombre")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(100)]
         public string Nombre { get; set; }
         public Nullable<int> ProvinciaId { get; set; }
     

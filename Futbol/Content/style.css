@@ -4798,7 +4798,7 @@ div#sparklinehome canvas {
     height: 250px;
     margin: 0 auto 0 auto;
     padding: 0px 0px 70px 0px;
-    max-width: 100%;
+    max-width: 90%;
     border: 1px solid #ffffff;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -4822,6 +4822,9 @@ div#sparklinehome canvas {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+.title-torneo {
+    color: white;
 }
 .margin-top-bot {
     margin-top: 10px;

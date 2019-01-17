@@ -21,7 +21,7 @@
                     <li>
                         <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">Equipos</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="All Professors" href="@Url.Action("Index","Equipos", new { id_torneo = 16 })"><span class="mini-sub-pro">Ver Equipos</span></a></li>
+                            <li><a title="All Professors" href="@Url.Action("Index","Equipos", new { id_torneo = ViewBag.IdTorneo })"><span class="mini-sub-pro">Ver Equipos</span></a></li>
                             <li><a title="Add Professor" href="@Url.Action("Create","Equipos")"><span class="mini-sub-pro">Inscribir equipo</span></a></li>
                         </ul>
                     </li>
