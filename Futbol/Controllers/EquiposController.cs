@@ -14,16 +14,38 @@ namespace Futbol.Controllers
     {
         private FutbolEntities db = new FutbolEntities();
 
-        // GET: Equipos
+
+
+
         public ActionResult Index(int? id_torneo)
         {
             var equipo = db.Equipo.Include(e => e.Imagen);
-            IEnumerable<Equipo> equipos_torneo;
+            var torneoEquipo = db.TorneoEquipo;
+            List<Equipo> todos_equipos = equipo.ToList();
+            List<TorneoEquipo> todos_relacion = torneoEquipo.ToList();
+            List<TorneoEquipo> nuevo_relacion = new List<TorneoEquipo>();
+            foreach (var item in todos_relacion)
+            {
+                if (item.torneo_id == id_torneo)
+                    nuevo_relacion.Add(item);
+            }
+
+            List<Equipo> lista_equipos = new List<Equipo>();
+
+            foreach (var item in nuevo_relacion) { 
+                foreach (var item2 in todos_equipos)
+                {
+                    if (item.equipo_id==item2.equipo_id) {
+                        lista_equipos.Add(item2);
+                    }
+                }
+            }
+
 
 
 
             
-            return View(equipo.ToList());
+            return View(lista_equipos);
         }
 
         // GET: Equipos/Details/5
