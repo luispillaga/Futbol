@@ -18,16 +18,20 @@ namespace Futbol.Controllers
 
 
 
-        public ActionResult Index(int? id_torneo)
+        public ActionResult Index()
         {
             var equipo = db.Equipo.Include(e => e.Imagen);
             var torneoEquipo = db.TorneoEquipo;
             List<Equipo> todos_equipos = equipo.ToList();
             List<TorneoEquipo> todos_relacion = torneoEquipo.ToList();
             List<TorneoEquipo> nuevo_relacion = new List<TorneoEquipo>();
+
+            var conf = ConfiguracionSingleton.GetInstance();
+            ViewBag.IdTorneo = conf.configuracion.IdTorneo;
+
             foreach (var item in todos_relacion)
             {
-                if (item.torneo_id == id_torneo)
+                if (item.torneo_id == conf.configuracion.IdTorneo)
                     nuevo_relacion.Add(item);
             }
 
@@ -42,8 +46,7 @@ namespace Futbol.Controllers
                 }
             }
 
-            var conf = ConfiguracionSingleton.GetInstance();
-            ViewBag.IdTorneo = conf.configuracion.IdTorneo;
+            
 
             return View(lista_equipos);
         }
@@ -77,14 +80,16 @@ namespace Futbol.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "equipo_id,equipo_nombre,equipo_representante,equipo_celular,equipo_telefono,equipo_estado,imagen_id")] Equipo equipo)
         {
+            var conf = ConfiguracionSingleton.GetInstance();
+            
             if (ModelState.IsValid)
             {
                 db.Equipo.Add(equipo);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create", "TorneoEquipos", new TorneoEquipo { tor_equ_fecha_inscripcion = DateTime.Now , equipo_id = equipo.equipo_id,torneo_id = conf.configuracion.IdTorneo});
             }
 
-            ViewBag.imagen_id = new SelectList(db.Imagen, "imagen_id", "imagen_title", equipo.imagen_id);
+            ViewBag.imagen_id = new SelectList(db.Imagen, "imagen_id", "imagen_title",  equipo.imagen_id);
             return View(equipo);
         }
 

@@ -39,26 +39,15 @@ namespace Futbol.Controllers
             return View(torneoEquipo);
         }
 
-        // GET: TorneoEquipos/Create
-        public ActionResult Create()
-        {
-            ViewBag.equipo_id = new SelectList(db.Equipo, "equipo_id", "equipo_nombre");
-            ViewBag.torneo_id = new SelectList(db.Torneo, "torneo_id", "torneo_nombre");
-            return View();
-        }
 
-        // POST: TorneoEquipos/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+ 
         public ActionResult Create([Bind(Include = "tor_equ_id,tor_equ_fecha_inscripcion,torneo_id,equipo_id")] TorneoEquipo torneoEquipo)
         {
             if (ModelState.IsValid)
             {
                 db.TorneoEquipo.Add(torneoEquipo);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Equipos");
             }
 
             ViewBag.equipo_id = new SelectList(db.Equipo, "equipo_id", "equipo_nombre", torneoEquipo.equipo_id);
