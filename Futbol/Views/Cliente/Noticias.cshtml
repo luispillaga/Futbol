@@ -1,10 +1,12 @@
 ﻿@model IEnumerable<Futbol.Noticia>
 
 @{
-    ViewBag.Title = "TorneoIndex";
+    ViewBag.Title = "Noticias";
     Layout = "~/Views/Shared/_LayoutClient.cshtml";
 }
 
+<h2>Noticias</h2>
+@ViewBag.IdTorneoCliente
 <h2>Noticias</h2>
 
 <div class="courses-area">
@@ -16,20 +18,18 @@
                     <div class="courses-inner res-mg-b-30">
                         <div class="courses-title">
                             <a href="#"><img class="img-noti" src="@Url.Content(item.Imagen.imagen_path)" alt=""></a>
-                            <h2>item.noticia_title</h2>
+                            <h2>@item.noticia_titulo</h2>
                         </div>
                         <div class="course-des">
                             <p><span><i class="fa fa-clock"></i></span> <b>Descripción:</b></p>
-                            <p>item.noticia_descripcion</p>
+                            <p>@item.noticia_descripcion</p>
                         </div>
                         @*<div class="product-buttons">
-                            <button type="button" class="button-default cart-btn">Read More</button>
-                        </div>*@
+                                <button type="button" class="button-default cart-btn">Read More</button>
+                            </div>*@
                     </div>
                 </div>
             }
         </div>
     </div>
 </div>
-
-    
