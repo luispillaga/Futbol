@@ -5,10 +5,10 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="header-top-wraper">
                         <div class="row">
-                            <div class="col-lg-4  col-md-3 col-sm-4 col-xs-5 ">
+                            <div class="col-lg-5  col-md-3 col-sm-4 col-xs-5 ">
                                 <div class="menu-switcher-pro">
                                     <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                        @if (ViewBag.IdTorneoCliente == null)
+                                        @if (ViewBag.IsTorneoActive == false )
                                         {
                                         <li class="nav-item">
                                             <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
@@ -39,7 +39,7 @@
                                             <div role="menu" class="dropdown-menu animated zoomIn">
                                                 <a href="#" class="dropdown-item">Clasificacion</a>
                                                 <a href="#" class="dropdown-item">Estadisticas</a>
-                                                <a href="#" class="dropdown-item">Equipos</a>
+                                                <a href='@Url.Action( "Equipo", "Cliente")' class="dropdown-item">Equipos</a>
                                                 <a href="#" class="dropdown-item">Jugadores</a>
                                             </div>
                                         </li>
