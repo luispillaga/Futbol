@@ -10,5 +10,7 @@ namespace Futbol.Models
         public int? IdTorneo { get; set; }
         public int? IdTorneoCliente { get; set; }
         public ICollection<Torneo> Torneos { get; set; }
+
+        public bool IsTorneoActive { get; set; }
     }
 }
