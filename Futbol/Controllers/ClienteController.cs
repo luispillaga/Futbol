@@ -44,9 +44,6 @@ namespace Futbol.Controllers
         public ActionResult EquipoJugador(int? id)
         {
 
-
-
-
             Torneo torneo = db.Torneo.Find(id);
             ViewBag.mitorneo = torneo;
             if (torneo== null)
