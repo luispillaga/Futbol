@@ -5,6 +5,8 @@ using System.Net;
 using System.Web.Http;
 using System.Web.Mvc;
 using Futbol.Models;
+using System.Data.Entity;
+
 
 namespace Futbol.Controllers
 {
@@ -18,13 +20,11 @@ namespace Futbol.Controllers
             var conf = ConfiguracionSingleton.GetInstance();
             conf.configuracion.Torneos = db.Torneo.ToList(); 
             ViewBag.listatorneo = conf.configuracion.Torneos;
-            ViewBag.IdTorneoCliente = conf.configuracion.IdTorneoCliente;    
-            return View();
-          
-          
+            ViewBag.IdTorneoCliente = conf.configuracion.IdTorneoCliente;
+            var noticia = db.Noticia.Include(t => t.Torneo);
+            return View(noticia.ToList());
         }
-
-        public ActionResult EquipoJugador(int? id)
+        public ActionResult Noticias(int? id)
         {
             if (id == null)
             {
@@ -33,9 +33,20 @@ namespace Futbol.Controllers
             var conf = ConfiguracionSingleton.GetInstance();
             conf.configuracion.Torneos = db.Torneo.ToList();
             conf.configuracion.IdTorneoCliente = id;
-
             ViewBag.listatorneo = conf.configuracion.Torneos;
             ViewBag.IdTorneoCliente = conf.configuracion.IdTorneoCliente;
+            var noticia = db.Noticia.Where(n => n.torneo_id == conf.configuracion.IdTorneoCliente);
+            return View(noticia.ToList());
+        }
+
+
+
+        public ActionResult EquipoJugador(int? id)
+        {
+
+
+
+
             Torneo torneo = db.Torneo.Find(id);
             ViewBag.mitorneo = torneo;
             if (torneo== null)
@@ -47,6 +58,12 @@ namespace Futbol.Controllers
             
         }
 
+        public ActionResult Equipo()
+        {
+
+
+            return View();
+        }
        
     }
 }
