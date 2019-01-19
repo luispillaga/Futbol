@@ -52,10 +52,21 @@ namespace Futbol.Controllers
 
         public ActionResult EquipoJugador(int? id)
         {
+<<<<<<< HEAD
+
+            Torneo torneo = db.Torneo.Find(id);
+            ViewBag.mitorneo = torneo;
+            if (torneo== null)
+            {
+                return HttpNotFound();
+            }
+            return View(torneo);
+=======
             conf.configuracion.Torneos = db.Torneo.ToList();
             ViewBag.listatorneo = conf.configuracion.Torneos;
             var jugadores = db.Jugador.Where(j => j.equipo_id == id);
             return View(jugadores.ToList());
+>>>>>>> b29306426b425db06bd4badfa6e85c1406715f46
             
             
         }
