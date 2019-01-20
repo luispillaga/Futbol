@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -15,7 +17,7 @@ namespace Futbol.Controllers
     public class TorneosController : Controller
     {
         private FutbolEntities db = new FutbolEntities();
-
+        private ConfiguracionSingleton conf = ConfiguracionSingleton.GetInstance();
 
         public ActionResult TorneoHome(int? id)
         {
@@ -23,8 +25,7 @@ namespace Futbol.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var singleton = ConfiguracionSingleton.GetInstance();
-            singleton.configuracion.IdTorneo = id;
+            conf.configuracion.IdTorneo = id;
             var torneo = db.Torneo.Find(id);
             if (torneo == null)
             {
@@ -68,7 +69,7 @@ namespace Futbol.Controllers
         public ActionResult RegisterTorneo()
         {
             ViewBag.provincia_id = new SelectList(db.Provincia, "Id", "Nombre");
-
+            ViewBag.torneo_estado = conf.configuracion.EstadosTorneo;
             var provincias = db.Provincia.ToList();
             var viewModel = new TorneoFormViewModel();
             
@@ -79,15 +80,33 @@ namespace Futbol.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult RegisterTorneo(TorneoFormViewModel torneo)
         {
-            //if (ModelState.IsValid)
-            //{
-            //    db.Torneo.Add(torneo);
-            //    db.SaveChanges();
-            //    return RedirectToAction("Index");
-            //}
+            if (ModelState.IsValid)
+            {
+                var filename = Path.GetFileNameWithoutExtension(torneo.Imagen.ImageFile.FileName);
+                var extension = Path.GetExtension(torneo.Imagen.ImageFile.FileName);
+                filename = filename + DateTime.Now.ToString("yy-MM-dd") + extension;
+                torneo.Direccion.ciuadad_id = torneo.ciudad_id;
+                torneo.Imagen.imagen_title = filename;
+                torneo.Imagen.imagen_path = "~/Images/" + filename;
+                var NewTorneo = new Torneo()
+                {
+                    Direccion = torneo.Direccion,
+                    Imagen = torneo.Imagen,
+                    torneo_nombre = torneo.torneo_nombre,
+                    torneo_descripcion =  torneo.torneo_descripcion,
+                    torneo_fecha_inicio = torneo.torneo_fecha_inicio,
+                    torneo_hora_inicio = torneo.torneo_hora_inicio,
+                    torneo_precio = torneo.torneo_precio,
+                    torneo_estado = torneo.torneo_estado
 
-            //ViewBag.direccion_id = new SelectList(db.Direccion, "direccion_id", "direccion_calle", torneo.direccion_id);
-            //ViewBag.imagen_id = new SelectList(db.Imagen, "imagen_id", "imagen_title", torneo.imagen_id);
+                };
+                filename = Path.Combine(Server.MapPath("~/Images/"), filename);
+                torneo.Imagen.ImageFile.SaveAs(filename);
+                db.Torneo.Add(NewTorneo);
+                db.SaveChanges();
+                return RedirectToAction("ListaTorneos", "Torneos");
+            }
+            ViewBag.provincia_id = new SelectList(db.Provincia, "Id", "Nombre");
             return View(torneo);
         }
 
@@ -96,6 +115,22 @@ namespace Futbol.Controllers
         {
             var torneo = db.Torneo.Include(t => t.Direccion).Include(t => t.Imagen);
             return View(torneo.ToList());
+        }
+
+
+        //GET: Ver Mi torneo
+        public ActionResult MiTorneo()
+        {
+            if (conf.configuracion.IdTorneo == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Torneo torneo = db.Torneo.Find(conf.configuracion.IdTorneo);
+            if (torneo == null)
+            {
+                return HttpNotFound();
+            }
+            return View(torneo);
         }
 
         // POST: Torneos/Create

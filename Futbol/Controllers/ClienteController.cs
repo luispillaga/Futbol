@@ -5,9 +5,11 @@ using System.Net;
 using System.Web.Http;
 using System.Web.Mvc;
 using Futbol.Models;
+using AllowAnonymousAttribute = System.Web.Mvc.AllowAnonymousAttribute;
 
 namespace Futbol.Controllers
 {
+  //  [AllowAnonymous]
     public class ClienteController : Controller
     {
         static List<Torneo> listorneo = new List<Torneo>();

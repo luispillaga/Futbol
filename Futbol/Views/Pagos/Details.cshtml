@@ -1,0 +1,51 @@
+﻿@model Futbol.Pago
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pago</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.pago_fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pago_fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pago_valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pago_valor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pago_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pago_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TorneoEquipo.tor_equ_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TorneoEquipo.tor_equ_id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.pago_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
