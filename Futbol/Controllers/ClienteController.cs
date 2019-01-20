@@ -6,6 +6,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using Futbol.Models;
 using AllowAnonymousAttribute = System.Web.Mvc.AllowAnonymousAttribute;
+using System.Data.Entity;
+
 
 namespace Futbol.Controllers
 {
@@ -14,41 +16,53 @@ namespace Futbol.Controllers
     {
         static List<Torneo> listorneo = new List<Torneo>();
         private FutbolEntities db = new FutbolEntities();
+        private ConfiguracionSingleton conf = ConfiguracionSingleton.GetInstance();
 
         public ActionResult TorneoIndex()
         {
-            var conf = ConfiguracionSingleton.GetInstance();
             conf.configuracion.Torneos = db.Torneo.ToList(); 
             ViewBag.listatorneo = conf.configuracion.Torneos;
-            ViewBag.IdTorneoCliente = conf.configuracion.IdTorneoCliente;    
-            return View();
-          
-          
+            ViewBag.IdTorneoCliente = conf.configuracion.IdTorneoCliente;
+            conf.configuracion.IsTorneoActive = false;
+            ViewBag.IsTorneoActive = conf.configuracion.IsTorneoActive;
+            var noticia = db.Noticia.Include(t => t.Torneo);
+            return View(noticia.ToList());
         }
-
-        public ActionResult EquipoJugador(int? id)
+        public ActionResult Noticias(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var conf = ConfiguracionSingleton.GetInstance();
             conf.configuracion.Torneos = db.Torneo.ToList();
             conf.configuracion.IdTorneoCliente = id;
-
+            conf.configuracion.IsTorneoActive = true;
             ViewBag.listatorneo = conf.configuracion.Torneos;
+            ViewBag.IsTorneoActive = conf.configuracion.IsTorneoActive;
             ViewBag.IdTorneoCliente = conf.configuracion.IdTorneoCliente;
-            Torneo torneo = db.Torneo.Find(id);
-            ViewBag.mitorneo = torneo;
-            if (torneo== null)
-            {
-                return HttpNotFound();
-            }
-            return View(torneo);
+            var noticia = db.Noticia.Where(n => n.torneo_id == conf.configuracion.IdTorneoCliente);
+            return View(noticia.ToList());
+        }
+
+        public ActionResult Equipo()
+        {
+            conf.configuracion.Torneos = db.Torneo.ToList();
+            ViewBag.listatorneo = conf.configuracion.Torneos;
+            var equipos= db.TorneoEquipo.Where(e => e.torneo_id == conf.configuracion.IdTorneoCliente);
+            return View(equipos);
+        }
+
+        public ActionResult EquipoJugador(int? id)
+        {
+            conf.configuracion.Torneos = db.Torneo.ToList();
+            ViewBag.listatorneo = conf.configuracion.Torneos;
+            var jugadores = db.Jugador.Where(j => j.equipo_id == id);
+            return View(jugadores.ToList());
             
             
         }
 
+        
        
     }
 }

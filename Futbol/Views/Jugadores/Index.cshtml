@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Futbol.Jugador>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.jugador_cedula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jugador_nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jugador_apellidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jugador_dorsal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jugador_edad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jugador_estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Equipo.equipo_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Imagen.imagen_title)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.jugador_cedula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.jugador_nombres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.jugador_apellidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.jugador_dorsal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.jugador_edad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.jugador_estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Equipo.equipo_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Imagen.imagen_title)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.jugador_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.jugador_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.jugador_id })
+        </td>
+    </tr>
+}
+
+</table>

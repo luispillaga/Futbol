@@ -4858,3 +4858,14 @@ div#sparklinehome canvas {
 		padding-top: 5px;
 	}
 }
+.img-noti {
+    max-width: 200px;
+    max-height: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}

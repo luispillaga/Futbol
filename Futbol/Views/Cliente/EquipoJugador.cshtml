@@ -1,4 +1,4 @@
-﻿@model  Futbol.Torneo
+﻿@model  IEnumerable<Futbol.Jugador>
 @{
     Layout = "~/Views/Shared/_LayoutClient.cshtml";
 }
@@ -7,7 +7,27 @@
 }
 
 
-<h2>gola</h2>
+<h2>Jugadores</h2>
+<div class="courses-area">
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="courses-inner res-mg-b-30">
+                        <div class="courses-title">
+                            <a href="#"><img class="img-noti" src="@Url.Content(item.Imagen.imagen_path)" alt=""></a>
+                            <h2>@item.jugador_nombres @item.jugador_apellidos</h2>
+                        </div>
+                        <div class="course-des">
+                            <p><span><i class="fa fa-clock"></i></span> <b>Dorsal:</b>@item.jugador_dorsal</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Edad:</b>@item.jugador_edad</p>
 
-
-
+                        </div>
+                       
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -5,29 +5,50 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="header-top-wraper">
                         <div class="row">
-                            <div class="col-lg-4 col-md-3 col-sm-4 col-xs-5 ">
+                            <div class="col-lg-5  col-md-3 col-sm-4 col-xs-5 ">
                                 <div class="menu-switcher-pro">
                                     <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                        @if (ViewBag.IdTorneoCliente == null)
+                                        @if (ViewBag.IsTorneoActive == false )
                                         {
-                                            <li class="nav-item">
-                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                                                    <span class="admin-name">Noticias</span>
-                                                </a>
-                                            </li>
+                                        <li class="nav-item">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                <span class="admin-name">Noticias</span>
+                                            </a>
+                                        </li>
+
                                         }
                                         else
                                         {
-                                            <li class="nav-item">
-                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                                                    <span class="admin-name">Noticias</span>
-                                                </a>
-                                            </li>
+                                        <li class="nav-item">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                <span class="admin-name">Noticias</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                <span class="admin-name">Resultados</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                <span class="admin-name">Calendario</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item dropdown res-dis-nn ">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="true" class="nav-link dropdown-toggle">+</a>
+                                            <div role="menu" class="dropdown-menu animated zoomIn">
+                                                <a href="#" class="dropdown-item">Clasificacion</a>
+                                                <a href="#" class="dropdown-item">Estadisticas</a>
+                                                <a href='@Url.Action( "Equipo", "Cliente")' class="dropdown-item">Equipos</a>
+                                                <a href="#" class="dropdown-item">Jugadores</a>
+                                            </div>
+                                        </li>
+
                                         }
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-7 col-sm-offset-5 col-sm-5">
+                            <div class="col-lg-2 col-md-7 col-sm-offset-5 col-sm-5">
                                 <div class="header-right-info">
                                     <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                         <li class="nav-item">
@@ -45,37 +66,7 @@
         </div>
     </div>
 
-    <!-- Mobile Menu end -->
-    <div class="breadcome-area">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcome-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="breadcome-heading">
-                                    <form role="search" class="sr-input-func">
-                                        <input type="text" placeholder="Search..." class="search-int form-control">
-                                        <a href="#"><i class="fa fa-search"></i></a>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <ul class="breadcome-menu">
-                                    <li>
-                                        <a href="#">Home</a> <span class="bread-slash">/</span>
-                                    </li>
-                                    <li>
-                                        <span class="bread-blod">Dashboard V.1</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 </div>
 
 

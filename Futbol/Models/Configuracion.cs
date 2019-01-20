@@ -13,5 +13,6 @@ namespace Futbol.Models
         public ICollection<Torneo> Torneos { get; set; }
         public List<SelectListItem> EstadosTorneo { get; set; }
         public List<SelectListItem> EstadosEquipo  { get; set; }
+        public bool IsTorneoActive { get; set; }
     }
 }

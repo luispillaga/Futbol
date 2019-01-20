@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Futbol.TorneoEquipo>
+@{
+    ViewBag.Title = "Equipos";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+
+<h2>Equipos</h2>
+<div class="courses-area">
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="courses-inner res-mg-b-30">
+                        <div class="courses-title">
+                            <a href="#"><img class="img-noti" src="@Url.Content(item.Equipo.Imagen.imagen_path)" alt=""></a>
+                            <h2>@item.Equipo.equipo_nombre</h2>
+                        </div>
+                        <div class="course-des">
+                            <p><span><i class="fa fa-clock"></i></span> <b>Representante:</b>@item.Equipo.equipo_representante</p>
+                            <p><span><i class="fa fa-clock"></i></span> <b>Teléfono:</b>@item.Equipo.equipo_telefono</p>
+
+                        </div>
+                        <div class="product-buttons">
+
+                            <a href='@Url.Action( "EquipoJugador", "Cliente",new {id=item.equipo_id})' class="button-default cart-btn">
+                                Jugadores
+                            </a>
+                           
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+

@@ -1,9 +1,6 @@
-﻿@model Futbol.Torneo
-@{
+﻿@{
     ViewBag.Title = "LeftPanel";
 }
-
-
 
 <!-- Start Left menu area -->
 <div class="left-sidebar-pro">
@@ -24,7 +21,7 @@
                             @foreach (var item in ViewBag.listatorneo)
                                 {
 
-                                    <li><a title="Dashboard v.1" href='@Url.Action( "EquipoJugador", "Cliente", new { id = item.torneo_id })'><span class="mini-sub-pro">@item.torneo_nombre </span></a></li>
+                                    <li><a title="Dashboard v.1" href='@Url.Action( "Noticias", "Cliente", new { id = item.torneo_id })'><span class="mini-sub-pro">@item.torneo_nombre </span></a></li>
 
                                 }
 
