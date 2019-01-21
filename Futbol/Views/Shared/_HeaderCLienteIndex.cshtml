@@ -11,7 +11,7 @@
                                         @if (ViewBag.IsTorneoActive == false )
                                         {
                                         <li class="nav-item">
-                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                            <a href='@Url.Action( "TorneoIndex", "Cliente")'  role="button" aria-expanded="true" class="nav-link dropdown-toggle">
                                                 <span class="admin-name">Noticias</span>
                                             </a>
                                         </li>
@@ -20,7 +20,7 @@
                                         else
                                         {
                                         <li class="nav-item">
-                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                            <a href='@Url.Action( "TorneoIndex", "Cliente")' role="button" aria-expanded="true" class="nav-link dropdown-toggle">
                                                 <span class="admin-name">Noticias</span>
                                             </a>
                                         </li>
@@ -38,9 +38,9 @@
                                             <a href="#" data-toggle="dropdown" role="button" aria-expanded="true" class="nav-link dropdown-toggle">+</a>
                                             <div role="menu" class="dropdown-menu animated zoomIn">
                                                 <a href="#" class="dropdown-item">Clasificacion</a>
-                                                <a href="#" class="dropdown-item">Estadisticas</a>
-                                                <a href='@Url.Action( "Equipo", "Cliente")' class="dropdown-item">Equipos</a>
-                                                <a href="#" class="dropdown-item">Jugadores</a>
+                                                <a href="#" class="dropdown-item">Estadisticas</a><br>
+                                                <a href='@Url.Action( "Equipo", "Cliente")' class="dropdown-item">Equipos - Jugadores</a><br>
+                                                
                                             </div>
                                         </li>
 
