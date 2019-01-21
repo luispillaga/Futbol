@@ -26,20 +26,41 @@ namespace Futbol.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             conf.configuracion.IdTorneo = id;
-            var torneo = db.Torneo.Find(id);
-            if (torneo == null)
+            var torneos_equipo = db.TorneoEquipo.Where(te => te.torneo_id == conf.configuracion.IdTorneo);
+            var jugadores = db.Jugador;
+            int ContadorJugadores = 0;
+            foreach (var item in torneos_equipo)
             {
-                return HttpNotFound();
+                foreach (var item2 in jugadores)
+                {
+                    if (item.equipo_id == item2.equipo_id)
+                    {
+                        ContadorJugadores++;
+                    }
+                }
             }
-            return View(torneo);
+            var stats = new DashBoard()
+            {
+                TotalEquipos = db.TorneoEquipo.Count(te => te.torneo_id == conf.configuracion.IdTorneo),
+                TotalJugadores = ContadorJugadores,
+                TotalTorneos = db.Torneo.Count(),
+                TotalNoticias = db.Noticia.Count(n => n.torneo_id == conf.configuracion.IdTorneo)
+            };
+            return View(stats);
+        }
+
+        public ActionResult DashBoard()
+        {
+            int? idtorneo = conf.configuracion.IdTorneo;
+            return RedirectToAction("TorneoHome", new{id = idtorneo});
         }
 
         // GET: Torneos
 
         public ActionResult Index()
         {
-            var torneo = db.Torneo.Include(t => t.Direccion).Include(t => t.Imagen);
-            return View(torneo.ToList());
+            var torneos = db.Torneo.Where(t => t.torneo_id != conf.configuracion.IdTorneo);
+            return View(torneos);
         }
 
         // GET: Torneos/Details/5

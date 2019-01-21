@@ -2,8 +2,8 @@
 <div class="left-sidebar-pro">
     <nav id="sidebar" class="">
         <div class="sidebar-header">
-            <a href="index.html"><img runat="server" class="main-logo padding-logo" src="@Url.Content("../../Content/img/logo/logo.svg")" alt="" /></a>
-            <strong><a href="index.html"><img src="img/logo/logosn.png" alt="" /></a></strong>
+            <a href="@Url.Action("DashBoard","Torneos")"><img runat="server" class="main-logo padding-logo" src="@Url.Content("../../Content/img/logo/logo.svg")" alt="" /></a>
+            <strong><a href="@Url.Action("DashBoard","Torneos")"><img src="img/logo/logosn.png" alt="" /></a></strong>
         </div>
         <div class="left-custom-menu-adp-wrap comment-scrollbar">
             <nav class="sidebar-nav left-sidebar-menu-pro">
@@ -14,8 +14,9 @@
                             <span class="mini-click-non">Torneo</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="true">
-                            <li><a title="Dashboard v.1" href="@Url.Action("MiTorneo","Torneos")"><span class="mini-sub-pro">Ver mi torneo</span></a></li>
-                            <li><a title="Dashboard v.1" href="@Url.Action("Index","Noticias")"><span class="mini-sub-pro">Noticias</span></a></li>
+                            <li><a title="Dashboard v.1" href="@Url.Action("DashBoard","Torneos")"><span class="mini-sub-pro">Estadísticas</span></a></li>
+                            <li><a title="Dashboard v.1" href="@Url.Action("MiTorneo", "Torneos")"><span class="mini-sub-pro">Ver mi torneo</span></a></li>
+                            <li><a title="Dashboard v.1" href="@Url.Action("Index", "Noticias")"><span class="mini-sub-pro">Ver Noticias</span></a></li>
                         </ul>
                     </li>
 
@@ -27,18 +28,18 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Pagos</span></a>
+                        <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Jugadores</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="All Students" href="@Url.Action("Index","Pagos")"><span class="mini-sub-pro">Ver Pagos</span></a></li>
-                            <li><a title="Add Students" href="@Url.Action("Create","Pagos")"><span class="mini-sub-pro">Registrar Pagos</span></a></li>
-
+                            <li><a title="All Students" href="@Url.Action("Index","Jugadores")"><span class="mini-sub-pro">Ver Jugadores</span></a></li>
+                            <li><a title="Add Students" href="@Url.Action("Create","Jugadores")"><span class="mini-sub-pro">Inscribir Jugador</span></a></li>
                         </ul>
                     </li>
                     <li>
-                        <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Jugadores</span></a>
+                        <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Pagos</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="All Students" href="@Url.Action("Index","Jugadors")"><span class="mini-sub-pro">Ver Jugadores</span></a></li>
-                            <li><a title="Add Students" href="@Url.Action("Create","Jugadors")"><span class="mini-sub-pro">Inscribir Jugadores</span></a></li>
+                            <li><a title="All Students" href="@Url.Action("Index","Pagos")"><span class="mini-sub-pro">Ver Pagos</span></a></li>
+                            <li><a title="Add Students" href="@Url.Action("Create","Pagos")"><span class="mini-sub-pro">Registrar Pago</span></a></li>
+
                         </ul>
                     </li>
                     <li>
@@ -61,13 +62,6 @@
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="Departments List" href="@Url.Action("Index","Torneos")"><span class="mini-sub-pro">Ver Torneos</span></a></li>
                             <li><a title="Add Departments" href="@Url.Action("ListaTorneos","Torneos")"><span class="mini-sub-pro">Cambiar Torneo</span></a></li>
-
-                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
-                            {
-                                @Html.AntiForgeryToken()
-                                <li><a title="Add Departments" href="javascript:document.getElementById('logoutForm').submit()"><span class="mini-sub-pro">Cerrar Sesion</span></a></li>
-                            }
-
                         </ul>
                     </li>
 

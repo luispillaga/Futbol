@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace Futbol
 {
     using System;
@@ -22,10 +24,34 @@ namespace Futbol
         }
     
         public int equipo_id { get; set; }
+
+        [Display(Name = "Nombre")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(100)]
+        [DataType(DataType.Text)]
         public string equipo_nombre { get; set; }
+
+        [Display(Name = "Representante")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(100)]
+        [DataType(DataType.Text)]
         public string equipo_representante { get; set; }
+
+        [Display(Name = "Celular")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(100)]
+        [DataType(DataType.PhoneNumber)]
         public string equipo_celular { get; set; }
+
+        [Display(Name = "Teléfono")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(100)]
+        [DataType(DataType.PhoneNumber)]
         public string equipo_telefono { get; set; }
+
+        [Display(Name = "Estado")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(100)]
         public string equipo_estado { get; set; }
         public Nullable<int> imagen_id { get; set; }
     

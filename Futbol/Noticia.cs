@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace Futbol
 {
     using System;
@@ -15,7 +17,18 @@ namespace Futbol
     public partial class Noticia
     {
         public int noticia_id { get; set; }
+
+        [Display(Name = "Título")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(100)]
+        [DataType(DataType.Text)]
         public string noticia_titulo { get; set; }
+
+
+        [Display(Name = "Descripción")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(100)]
+        [DataType(DataType.MultilineText)]
         public string noticia_descripcion { get; set; }
         public Nullable<int> imagen_id { get; set; }
         public Nullable<int> torneo_id { get; set; }

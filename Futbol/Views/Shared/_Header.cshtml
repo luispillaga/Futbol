@@ -1,4 +1,5 @@
-﻿<div class="header-advance-area">
+﻿@using Microsoft.AspNet.Identity
+<div class="header-advance-area">
     <div class="header-top-area">
         <div class="container-fluid">
             <div class="row">
@@ -18,24 +19,19 @@
                                         <li class="nav-item">
                                             <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                                 <img src="img/product/pro4.jpg" alt="" />
-                                                <span class="admin-name">Prof.Anderson</span>
+                                                <span class="admin-name">@User.Identity.GetUserName()</span>
                                                 <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                                             </a>
                                             <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
                                                 <li>
-                                                    <a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
+                                                    <a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>Mi Cuenta</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><span class="edu-icon edu-money author-log-ic"></span>User Billing</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><span class="edu-icon edu-settings author-log-ic"></span>Settings</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a>
+                                                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                                    {
+                                                        @Html.AntiForgeryToken()
+                                                        <a href="javascript:document.getElementById('logoutForm').submit()"><span class="edu-icon edu-home-admin author-log-ic">Salir</span></a>
+                                                    }
                                                 </li>
                                             </ul>
                                         </li>

@@ -50,6 +50,24 @@ namespace Futbol.Models
                     Value = "Sancionado"
                 }
             };
+            configuracion.EstadosJugador = new List<SelectListItem>()
+            {
+                new SelectListItem()
+                {
+                    Text = "Validado",
+                    Value = "Validado"
+                },
+                new SelectListItem()
+                {
+                    Text = "Suspendido",
+                    Value = "Suspendido"
+                },
+                new SelectListItem()
+                {
+                    Text = "Retirado",
+                    Value = "Retirado"
+                }
+            };
         }
 
         public static ConfiguracionSingleton GetInstance()

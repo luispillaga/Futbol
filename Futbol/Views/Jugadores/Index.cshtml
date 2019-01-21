@@ -5,72 +5,113 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+<div class="product-status mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap drp-lst">
+                    <h4>Jugadores</h4>
+                    <div class="btn-group">
+                        <a class="btn btn-primary" href="@Url.Action("Create", "Jugadores")">Crear Jugador</a>
+                    </div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.jugador_cedula)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.jugador_nombres)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.jugador_apellidos)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.jugador_dorsal)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.jugador_edad)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.jugador_estado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Equipo.equipo_nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Imagen.imagen_title)
-        </th>
-        <th></th>
-    </tr>
+                    <div class="asset-inner">
+                        <br />
+                        <table id="jugadores">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.jugador_cedula)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.jugador_nombres)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.jugador_apellidos)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.jugador_dorsal)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.jugador_edad)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.jugador_estado)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Equipo.equipo_nombre)
+                                    </th>
+                                    <th>
+                                        Imagen
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.jugador_cedula)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.jugador_nombres)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.jugador_apellidos)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.jugador_dorsal)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.jugador_edad)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.jugador_estado)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Equipo.equipo_nombre)
+                                        </td>
+                                        <td>
+                                            <img src="@Url.Content(item.Imagen.imagen_path)" alt="Alternate Text" width="100" height="100" />
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-primary" href="@Url.Action("Details", "Jugadores", new {id = item.jugador_id})">Ver</a>
+                                            <a class="btn btn-primary" href="@Url.Action("Edit", "Jugadores", new {id = item.jugador_id})">Editar</a>
+                                            <button data-jugador-id="@item.jugador_id" class="js-delete btn btn-primary">Borrar</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.jugador_cedula)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.jugador_nombres)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.jugador_apellidos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.jugador_dorsal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.jugador_edad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.jugador_estado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Equipo.equipo_nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Imagen.imagen_title)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.jugador_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.jugador_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.jugador_id })
-        </td>
-    </tr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            var table = $("#jugadores").DataTable();
+            $("#jugadores").on("click",".js-delete", function() {
+                var button = $(this);
+                bootbox.confirm("¿Esta seguro que desea eliminar esta jugador?", function(result) {
+                    if (result) {
+                        $.ajax({
+                            url: "../api/Jugadores/" + button.attr("data-jugador-id"),
+                            method: "DELETE",
+                            success: function () {
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 }
 
-</table>

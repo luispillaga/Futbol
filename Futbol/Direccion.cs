@@ -32,7 +32,6 @@ namespace Futbol
         [Display(Name = "Referencia")]
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(200)]
-        [DataType(DataType.MultilineText)]
         public string direccion_referencia { get; set; }
         public Nullable<int> ciuadad_id { get; set; }
     

@@ -18,8 +18,8 @@ namespace Futbol.Controllers
         // GET: Pagos
         public ActionResult Index()
         {
-            var pago = db.Pago.Include(p => p.TorneoEquipo);
-            return View(pago.ToList());
+            var pagos = db.Pago.Where(p => p.TorneoEquipo.torneo_id == conf.configuracion.IdTorneo);
+            return View(pagos);
         }
 
         // GET: Pagos/Details/5

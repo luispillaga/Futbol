@@ -1,5 +1,77 @@
-﻿@{
+﻿@model Futbol.Models.DashBoard
+
+@{
     ViewBag.Title = "TorneoHome";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-@ViewBag.IdTorneo
+<div class="blog-details-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="blog-details-inner text-center">
+                    <h1>Bienvenido</h1>
+                    <p>Aquí encontrarás tus Estadísticas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="traffice-source-area mg-b-30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="white-box analytics-info-cs">
+                    <h3 class="box-title">Torneos</h3>
+                    <ul class="list-inline two-part-sp">
+                        <li>
+                            <div id="sparklinedash"><canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas></div>
+                        </li>
+                        <li class="text-right sp-cn-r">
+                            <i class="fa fa-level-up" aria-hidden="true"></i> <span class="counter text-success">@Html.DisplayFor(model => model.TotalTorneos)
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="white-box analytics-info-cs res-mg-t-30 table-mg-t-pro-n">
+                    <h3 class="box-title">Equipos</h3>
+                    <ul class="list-inline two-part-sp">
+                        <li>
+                            <div id="sparklinedash2"><canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas></div>
+                        </li>
+                        <li class="text-right graph-two-ctn">
+                            <i class="fa fa-level-up" aria-hidden="true"></i> <span class="counter text-purple">@Html.DisplayFor(model => model.TotalEquipos)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="white-box analytics-info-cs res-mg-t-30 res-tablet-mg-t-30 dk-res-t-pro-30">
+                    <h3 class="box-title">Jugadores</h3>
+                    <ul class="list-inline two-part-sp">
+                        <li>
+                            <div id="sparklinedash3"><canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas></div>
+                        </li>
+                        <li class="text-right graph-three-ctn">
+                            <i class="fa fa-level-up" aria-hidden="true"></i> <span class="counter text-info">@Html.DisplayFor(model => model.TotalJugadores)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="white-box analytics-info-cs res-mg-t-30 res-tablet-mg-t-30 dk-res-t-pro-30">
+                    <h3 class="box-title">Noticias</h3>
+                    <ul class="list-inline two-part-sp">
+                        <li>
+                            <div id="sparklinedash4"><canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas></div>
+                        </li>
+                        <li class="text-right graph-four-ctn">
+                            <i class="fa fa-level-down" aria-hidden="true"></i> <span class="text-danger"><span class="counter">@Html.DisplayFor(model => model.TotalNoticias)</span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

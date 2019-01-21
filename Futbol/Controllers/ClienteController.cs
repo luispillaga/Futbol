@@ -11,7 +11,7 @@ using System.Data.Entity;
 
 namespace Futbol.Controllers
 {
-  //  [AllowAnonymous]
+    [AllowAnonymous]
     public class ClienteController : Controller
     {
         static List<Torneo> listorneo = new List<Torneo>();

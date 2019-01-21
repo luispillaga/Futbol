@@ -57,6 +57,7 @@ namespace Futbol.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            ViewBag.ExistAccount = 
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
@@ -163,7 +164,7 @@ namespace Futbol.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("LogIn", "Account");
                 }
                 AddErrors(result);
             }
@@ -449,7 +450,7 @@ namespace Futbol.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("ListaTorneos", "Torneos");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

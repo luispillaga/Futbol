@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace Futbol
 {
     using System;
@@ -15,8 +17,20 @@ namespace Futbol
     public partial class Pago
     {
         public int pago_id { get; set; }
+
+        [Display(Name = "Fecha Pago")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [DataType(DataType.Date)]
         public System.DateTime pago_fecha { get; set; }
+
+        [Display(Name = "Valor Pago")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [DataType(DataType.Currency)]
         public decimal pago_valor { get; set; }
+
+        [Display(Name = "Descripción")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [DataType(DataType.MultilineText)]
         public string pago_descripcion { get; set; }
         public Nullable<int> tor_equ_id { get; set; }
     

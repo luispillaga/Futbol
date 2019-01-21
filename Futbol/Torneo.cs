@@ -39,6 +39,7 @@ namespace Futbol
         public System.DateTime torneo_fecha_inicio { get; set; }
 
         [DataType(DataType.Time)]
+        [Display(Name = "Hora de Inicio")]
         //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{H:mm:ss}")]
         public System.TimeSpan torneo_hora_inicio { get; set; }
 
@@ -67,9 +68,5 @@ namespace Futbol
         public virtual ICollection<Noticia> Noticia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TorneoEquipo> TorneoEquipo { get; set; }
-
-        [NotMapped]
-        [Required(ErrorMessage = "El campo {0} es requerido")]
-        public HttpPostedFileBase ImageFile { get; set; }
     }
 }

@@ -4,80 +4,89 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-
-<h2>Details</h2>
-
-<div>
-    <h4>Jugador</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.jugador_cedula)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.jugador_cedula)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.jugador_nombres)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.jugador_nombres)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.jugador_apellidos)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.jugador_apellidos)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.jugador_dorsal)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.jugador_dorsal)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.jugador_edad)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.jugador_edad)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.jugador_estado)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.jugador_estado)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Equipo.equipo_nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Equipo.equipo_nombre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Imagen.imagen_title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Imagen.imagen_title)
-        </dd>
-
-    </dl>
+<div class="library-book-area mg-t-30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="single-cards-item">
+                    <div class="single-product-image">
+                        <a href="#"><img src="@Url.Content("~/Content/img/login/Fondo.jpg")" alt=""></a>
+                    </div>
+                    <div class="single-product-text">
+                        <img src="@Url.Content(Model.Imagen.imagen_path)" alt="">
+                        <h4 class="cards-hd-dn">
+                            @Html.DisplayFor(model => model.jugador_nombres) @Html.DisplayFor(model => model.jugador_apellidos)
+                        </h4>
+                        <h5>
+                            @Html.DisplayFor(model => model.jugador_estado)
+                        </h5>
+                        <a class="follow-cards" href="@Url.Action("Edit", "Jugadores", new { id = Model.jugador_id })">Editar</a>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="cards-dtn">
+                                    <h3>
+                                        <span>
+                                            @Html.DisplayFor(model => model.jugador_dorsal)
+                                        </span>
+                                    </h3>
+                                    <p>
+                                        @Html.DisplayNameFor(model => model.jugador_dorsal)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="cards-dtn">
+                                    <h3>
+                                        <span>
+                                            @Html.DisplayFor(model => model.jugador_edad)
+                                        </span>
+                                    </h3>
+                                    <p>
+                                        @Html.DisplayNameFor(model => model.jugador_edad)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="cards-dtn">
+                                    <h3>
+                                        <span>
+                                            @Html.DisplayFor(model => model.Equipo.equipo_nombre)
+                                        </span>
+                                    </h3>
+                                    <p>
+                                        Equipo
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="hpanel widget-int-shape responsive-mg-b-30 res-tablet-mg-t-30 dk-res-t-pro-30">
+                    <div class="panel-body">
+                        <div class="stats-title pull-left">
+                            <h4>
+                                @Html.DisplayNameFor(model => model.jugador_cedula)
+                            </h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="educate-icon educate-department"></i>
+                        </div>
+                        <div class="m-t-xl widget-cl-3">
+                            <small>
+                                @Html.DisplayFor(model => model.jugador_cedula)
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-offset-6 col-md-offset-6 col-sm-offset-6 col-xs-offset-6">
+                        @Html.ActionLink("Volver", "Index")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.jugador_id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
