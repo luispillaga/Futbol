@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Futbol.Models
 {
@@ -13,6 +14,42 @@ namespace Futbol.Models
         public ConfiguracionSingleton()
         {
             configuracion = new Configuracion();
+            configuracion.EstadosTorneo = new List<SelectListItem>()
+            {
+                new SelectListItem()
+                {
+                    Text = "Configurando",
+                    Value = "Configurando"
+                },
+                new SelectListItem()
+                {
+                    Text = "En Progreso",
+                    Value = "En Progreso"
+                },
+                new SelectListItem()
+                {
+                    Text = "Finalizado",
+                    Value = "Finalizado"
+                }
+            };
+            configuracion.EstadosEquipo = new List<SelectListItem>()
+            {
+                new SelectListItem()
+                {
+                    Text = "Sin Confirmar",
+                    Value = "Sin Confirmar"
+                },
+                new SelectListItem()
+                {
+                    Text = "Confirmado",
+                    Value = "Confirmado"
+                },
+                new SelectListItem()
+                {
+                    Text = "Sancionado",
+                    Value = "Sancionado"
+                }
+            };
         }
 
         public static ConfiguracionSingleton GetInstance()

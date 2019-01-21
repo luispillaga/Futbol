@@ -14,7 +14,8 @@
                             <span class="mini-click-non">Torneo</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="true">
-                            <li><a title="Dashboard v.1" href="@Url.Action("Details","Torneos", new { id_torneo = 16 })"><span class="mini-sub-pro">Ver mi torneo</span></a></li>
+                            <li><a title="Dashboard v.1" href="@Url.Action("MiTorneo","Torneos")"><span class="mini-sub-pro">Ver mi torneo</span></a></li>
+                            <li><a title="Dashboard v.1" href="@Url.Action("Index","Noticias")"><span class="mini-sub-pro">Noticias</span></a></li>
                         </ul>
                     </li>
 
@@ -56,10 +57,10 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Usuarios</span></a>
+                        <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Mis Torneos</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="Departments List" href="@Url.Action("Index","Usuarios")"><span class="mini-sub-pro">Ver Usuario</span></a></li>
-                            <li><a title="Add Departments" href="@Url.Action("Register","Account")"><span class="mini-sub-pro">Registrar Usuario</span></a></li>
+                            <li><a title="Departments List" href="@Url.Action("Index","Torneos")"><span class="mini-sub-pro">Ver Torneos</span></a></li>
+                            <li><a title="Add Departments" href="@Url.Action("ListaTorneos","Torneos")"><span class="mini-sub-pro">Cambiar Torneo</span></a></li>
 
                             @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                             {

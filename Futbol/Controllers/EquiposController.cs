@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -14,9 +15,7 @@ namespace Futbol.Controllers
     public class EquiposController : Controller
     {
         private FutbolEntities db = new FutbolEntities();
-
-
-
+        private ConfiguracionSingleton conf = ConfiguracionSingleton.GetInstance();
 
         public ActionResult Index()
         {
@@ -46,8 +45,6 @@ namespace Futbol.Controllers
                 }
             }
 
-            
-
             return View(lista_equipos);
         }
 
@@ -69,7 +66,7 @@ namespace Futbol.Controllers
         // GET: Equipos/Create
         public ActionResult Create()
         {
-            ViewBag.imagen_id = new SelectList(db.Imagen, "imagen_id", "imagen_title");
+            ViewBag.equipo_estado = conf.configuracion.EstadosEquipo;
             return View();
         }
 
@@ -78,12 +75,20 @@ namespace Futbol.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "equipo_id,equipo_nombre,equipo_representante,equipo_celular,equipo_telefono,equipo_estado,imagen_id")] Equipo equipo)
+        public ActionResult Create(Equipo equipo)
         {
-            var conf = ConfiguracionSingleton.GetInstance();
+            conf = ConfiguracionSingleton.GetInstance();
             
             if (ModelState.IsValid)
             {
+                var filename = Path.GetFileNameWithoutExtension(equipo.Imagen.ImageFile.FileName);
+                var extension = Path.GetExtension(equipo.Imagen.ImageFile.FileName);
+                filename = filename + DateTime.Now.ToString("yy-MM-dd") + extension;
+                equipo.Imagen.imagen_title = filename;
+                equipo.Imagen.imagen_path = "~/Images/" + filename;
+                filename = Path.Combine(Server.MapPath("~/Images/"), filename);
+                equipo.Imagen.ImageFile.SaveAs(filename);
+
                 db.Equipo.Add(equipo);
                 db.SaveChanges();
                 return RedirectToAction("Create", "TorneoEquipos", new TorneoEquipo { tor_equ_fecha_inscripcion = DateTime.Now , equipo_id = equipo.equipo_id,torneo_id = conf.configuracion.IdTorneo});

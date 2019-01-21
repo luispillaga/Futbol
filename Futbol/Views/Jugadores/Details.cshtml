@@ -1,0 +1,83 @@
+﻿@model Futbol.Jugador
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Jugador</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.jugador_cedula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jugador_cedula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jugador_nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jugador_nombres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jugador_apellidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jugador_apellidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jugador_dorsal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jugador_dorsal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jugador_edad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jugador_edad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jugador_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jugador_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Equipo.equipo_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Equipo.equipo_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Imagen.imagen_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Imagen.imagen_title)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.jugador_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

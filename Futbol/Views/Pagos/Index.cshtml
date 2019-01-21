@@ -1,0 +1,133 @@
+﻿@model IEnumerable<Futbol.Pago>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="product-status mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap drp-lst">
+                    <h4>Pagos de Inscripción</h4>
+                    <div class="btn-group">
+                        <a class="btn btn-primary" href="@Url.Action("Create", "Pagos")">Crear Pago</a>
+                    </div>
+
+                    <div class="asset-inner">
+                        <br />
+                        <table id="pagos">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.pago_fecha)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.pago_valor)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.pago_descripcion)
+                                    </th>
+                                    <th>
+                                        Equipo
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.pago_fecha)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.pago_valor)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.pago_descripcion)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TorneoEquipo.Equipo.equipo_nombre)
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-primary" href="@Url.Action("Details", "Pagos", new {id = item.pago_id})">Ver</a>
+                                            <a class="btn btn-primary" href="@Url.Action("Edit", "Pagos", new {id = item.pago_id})">Editar</a>
+                                            <button data-pago-id="@item.pago_id" class="js-delete btn btn-primary">Borrar</button>
+
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            var table = $("#pagos").DataTable();
+            $("#pagos").on("click",".js-delete", function() {
+                var button = $(this);
+                bootbox.confirm("¿Esta seguro que desea eliminar este pago?", function(result) {
+                    if (result) {
+                        $.ajax({
+                            url: "../api/Pagos/" + button.attr("data-pago-id"),
+                            method: "DELETE",
+                            success: function () {
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}
+
+
+
+
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.pago_fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pago_valor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pago_descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TorneoEquipo.tor_equ_id)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.pago_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.pago_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.pago_id })
+            </td>
+        </tr>
+    }
+
+</table>

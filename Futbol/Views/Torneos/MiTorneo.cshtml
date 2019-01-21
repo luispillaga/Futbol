@@ -1,0 +1,135 @@
+﻿@model Futbol.Torneo
+
+@{
+    ViewBag.Title = "MiTorneo";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="library-book-area mg-t-30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="single-cards-item">
+                    <div class="single-product-image">
+                        <a href="#"><img src="@Url.Content("~/Content/img/login/Fondo.jpg")" alt=""></a>
+                    </div>
+                    <div class="single-product-text">
+                        <img src="@Url.Content(Model.Imagen.imagen_path)" alt="">
+                        <h4 class="cards-hd-dn">            
+                            @Html.DisplayFor(model => model.torneo_nombre)
+                        </h4>
+                        <h5>
+                            @Html.DisplayFor(model => model.torneo_estado)
+                        </h5>
+                        <a class="follow-cards" href="@Url.Action("Edit", "Torneos", new { id = Model.torneo_id })">Editar</a>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="cards-dtn">
+                                    <h3><span> @Html.DisplayFor(model => model.torneo_fecha_inicio)</span></h3>
+                                    <p>@Html.DisplayNameFor(model => model.torneo_fecha_inicio)</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="cards-dtn">
+                                    <h3><span>@Html.DisplayFor(model => model.torneo_hora_inicio)</span></h3>
+                                    <p>            
+                                        @Html.DisplayNameFor(model => model.torneo_hora_inicio)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="cards-dtn">
+                                    <h3><span>@Html.DisplayFor(model => model.torneo_precio)
+                                    </span></h3>
+                                    <p>            
+                                        @Html.DisplayNameFor(model => model.torneo_precio)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="hpanel widget-int-shape responsive-mg-b-30 res-tablet-mg-t-30 dk-res-t-pro-30">
+                    <div class="panel-body">
+                        <div class="stats-title pull-left">
+                            <h4>            
+                                @Html.DisplayNameFor(model => model.torneo_descripcion)
+                            </h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="educate-icon educate-department"></i>
+                        </div>
+                        <div class="m-t-xl widget-cl-3">
+                            <small>
+                                @Html.DisplayFor(model => model.torneo_descripcion)
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="hpanel widget-int-shape responsive-mg-b-30 res-tablet-mg-t-30 dk-res-t-pro-30">
+                    <div class="panel-body">
+                        <div class="stats-title pull-left">
+                            <h4>            
+                                @Html.DisplayNameFor(model => model.Direccion.direccion_calle)
+                            </h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="educate-icon educate-department"></i>
+                        </div>
+                        <div class="m-t-xl widget-cl-3">
+                            <small>
+                                @Html.DisplayFor(model => model.Direccion.direccion_calle)
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="hpanel widget-int-shape responsive-mg-b-30 res-tablet-mg-t-30 dk-res-t-pro-30">
+                    <div class="panel-body">
+                        <div class="stats-title pull-left">
+                            <h4>            
+                                @Html.DisplayNameFor(model => model.Direccion.direccion_referencia)
+                            </h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="educate-icon educate-department"></i>
+                        </div>
+                        <div class="m-t-xl widget-cl-3">
+                            <small>
+                                @Html.DisplayFor(model => model.Direccion.direccion_referencia)
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="hpanel widget-int-shape responsive-mg-b-30 res-tablet-mg-t-30 dk-res-t-pro-30">
+                    <div class="panel-body">
+                        <div class="stats-title pull-left">
+                            <h4>            
+                                Ciudad
+                            </h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="educate-icon educate-department"></i>
+                        </div>
+                        <div class="m-t-xl widget-cl-3">
+                            <small>
+                                @Html.DisplayFor(model => model.Direccion.Ciudad.Nombre)
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-offset-6 col-md-offset-6 col-sm-offset-6 col-xs-offset-6">
+                        @Html.ActionLink("Volver", "Index")
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
