@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Futbol.FaseGrupo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.faseg_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.faseg_fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.faseg_numero_grupos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.faseg_al_mejor_de)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.faseg_estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.faseg_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.faseg_fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.faseg_numero_grupos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.faseg_al_mejor_de)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.faseg_estado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.faseg_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.faseg_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.faseg_id })
+        </td>
+    </tr>
+}
+
+</table>

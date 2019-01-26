@@ -1,0 +1,104 @@
+﻿@model Futbol.ModelViews.FaseGruposViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="library-book-area mg-t-30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="single-cards-item">
+                    <div class="single-product-image">
+                        <a href="#"><img src="@Url.Content("~/Content/img/espe-images/faseg.jpg")" alt=""></a>
+                    </div>
+                    <div class="single-product-text">
+                        <h4 class="cards-hd-dn">
+                            @Html.DisplayFor(model => model.FaseGrupo.faseg_nombre)
+                        </h4>
+                        <h5>
+                            @Html.DisplayFor(model => model.FaseGrupo.faseg_estado)
+                        </h5>
+                        @if (Model.FaseGrupo.faseg_estado != "Configurando")
+                        {
+                            <a class="follow-cards disabled" href="@Url.Action("Edit", "FaseGrupos", new { id = Model.FaseGrupo.faseg_id })">Editar</a>
+                        }
+                        else
+                        {
+                            <a class="follow-cards" href="@Url.Action("Edit", "FaseGrupos", new { id = Model.FaseGrupo.faseg_id })">Editar</a>
+                        }
+                        <button data-equipo-id="@Model.FaseGrupo.faseg_id" class="js-delete btn btn-danger" style="height: 30px; width: 70px;">Borrar</button>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="cards-dtn">
+                                    <h3>
+                                        <span>
+                                            @Html.DisplayFor(model => model.FaseGrupo.faseg_fecha)
+                                        </span>
+                                    </h3>
+                                    <p>
+                                        @Html.DisplayNameFor(model => model.FaseGrupo.faseg_fecha)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="cards-dtn">
+                                    <h3>
+                                        <span>
+                                            @Html.DisplayFor(model => model.FaseGrupo.faseg_al_mejor_de)
+                                        </span>
+                                    </h3>
+                                    <p>
+                                        @Html.DisplayNameFor(model => model.FaseGrupo.faseg_al_mejor_de)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="hpanel widget-int-shape responsive-mg-b-30 res-tablet-mg-t-30 dk-res-t-pro-30">
+                    <div class="panel-body">
+                        <div class="stats-title pull-left">
+                            <h4 class="box-title">Número Grupos: @Html.DisplayFor(model => model.FaseGrupo.faseg_numero_grupos)
+                            </h4>
+                        </div>
+                        <div class="stats-icon pull-right">
+                            <i class="educate-icon educate-department"></i>
+                        </div>
+                        <div class="m-t-xl widget-cl-3">
+                            @if (Model.FaseGrupo.faseg_estado != "Configurando")
+                            {
+                                <a class="btn btn-primary disabled" style="color: white;" href="@Url.Action("Create", "Grupos", new {id = Model.FaseGrupo.faseg_id})">Crear Grupo</a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-primary" style="color: white;" href="@Url.Action("Create", "Grupos", new {id = Model.FaseGrupo.faseg_id})">Crear Grupo</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="white-box">
+                    <h3 class="box-title">Importante</h3>
+                    <p>Una vez terminada la configuración de la Fase presiona el siguiente botón</p>
+                    <a class="btn btn-success" href="@Url.Action("IniciarLlave", "FaseGrupos", new {id = Model.FaseGrupo.faseg_id})">Iniciar Llave</a>
+                </div>
+                <br />
+                <div class="white-box">
+                    <h3 class="box-title">Grupos</h3>
+                    <ul class="basic-list">
+                        @foreach (var item in Model.ListaGrupos)
+                        {
+                            <li>@item.grupo_nombre<span class="alignright"><a class="btn btn-primary" href="@Url.Action("Details", "Grupos", new {id = Model.FaseGrupo.faseg_id})">Ver Grupo</a>
+                            </span></li>
+                        }
+
+                    </ul>
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>

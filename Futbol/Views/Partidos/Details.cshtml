@@ -1,0 +1,67 @@
+﻿@model Futbol.Partido
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Partido</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.partido_hora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.partido_hora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.partido_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.partido_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.partido_observaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.partido_observaciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.partido_equipo_local)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.partido_equipo_local)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.partido_equipo_visitante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.partido_equipo_visitante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Jornada.jornada_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jornada.jornada_id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.partido_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

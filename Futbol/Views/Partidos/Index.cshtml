@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Futbol.Partido>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.partido_hora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.partido_estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.partido_observaciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.partido_equipo_local)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.partido_equipo_visitante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Jornada.jornada_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.partido_hora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.partido_estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.partido_observaciones)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.partido_equipo_local)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.partido_equipo_visitante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Jornada.jornada_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.partido_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.partido_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.partido_id })
+        </td>
+    </tr>
+}
+
+</table>

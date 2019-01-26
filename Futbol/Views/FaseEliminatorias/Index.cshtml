@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Futbol.FaseEliminatoria>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fasee_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fasee_fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fasee_num_equipos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fasee_al_mejor_de)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fasee_estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fasee_tercer_lugar)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fasee_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fasee_fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fasee_num_equipos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fasee_al_mejor_de)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fasee_estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fasee_tercer_lugar)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.fasee_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.fasee_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.fasee_id })
+        </td>
+    </tr>
+}
+
+</table>

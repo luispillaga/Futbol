@@ -1,0 +1,67 @@
+﻿@model Futbol.FaseEliminatoria
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FaseEliminatoria</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fasee_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fasee_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fasee_fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fasee_fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fasee_num_equipos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fasee_num_equipos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fasee_al_mejor_de)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fasee_al_mejor_de)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fasee_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fasee_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fasee_tercer_lugar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fasee_tercer_lugar)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.fasee_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

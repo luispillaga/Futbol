@@ -1,0 +1,73 @@
+﻿@model Futbol.FaseEliminatoria
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>FaseEliminatoria</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fasee_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fasee_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fasee_fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fasee_fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fasee_num_equipos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fasee_num_equipos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fasee_al_mejor_de)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fasee_al_mejor_de)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fasee_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fasee_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fasee_tercer_lugar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fasee_tercer_lugar)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
