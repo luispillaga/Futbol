@@ -68,6 +68,45 @@ namespace Futbol.Models
                     Value = "Retirado"
                 }
             };
+            configuracion.EstadosLlave = new List<SelectListItem>()
+            {
+                new SelectListItem()
+                {
+                    Text = "Configurando",
+                    Value = "Configurando"
+                },
+                new SelectListItem()
+                {
+                    Text = "En Progreso",
+                    Value = "En Progreso"
+                },
+                new SelectListItem()
+                {
+                    Text = "Finalizado",
+                    Value = "Finalizado"
+                }
+            };
+            configuracion.NombreGrupoDefault = new string[]
+            {
+                "Grupo A",
+                "Grupo B",
+                "Grupo C",
+                "Grupo D",
+                "Grupo F",
+                "Grupo G",
+                "Grupo H",
+                "Grupo I",
+                "Grupo J",
+                "Grupo K",
+                "Grupo L",
+                "Grupo M",
+                "Grupo N",
+                "Grupo O",
+                "Grupo P",
+                "Grupo R",
+                "Grupo S",
+                "Grupo T",
+            };
         }
 
         public static ConfiguracionSingleton GetInstance()

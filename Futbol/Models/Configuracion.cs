@@ -14,6 +14,8 @@ namespace Futbol.Models
         public List<SelectListItem> EstadosTorneo { get; set; }
         public List<SelectListItem> EstadosEquipo  { get; set; }
         public List<SelectListItem> EstadosJugador { get; set; }
+        public List<SelectListItem> EstadosLlave { get; set; }
+        public string[] NombreGrupoDefault { get; set; }
         public bool IsTorneoActive { get; set; }
     }
 }
