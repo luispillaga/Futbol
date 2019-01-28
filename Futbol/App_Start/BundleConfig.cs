@@ -45,7 +45,8 @@ namespace Futbol
                       "~/Content/js/main.js",
                       "~/Scripts/bootbox.js",
                       "~/Scripts/datatables/jquery.datatables.js",
-                      "~/Scripts/datatables/datatables.bootstrap.js"));
+                      "~/Scripts/datatables/datatables.bootstrap.js",
+                      "~/Scripts/toastr.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",
@@ -65,7 +66,8 @@ namespace Futbol
                       "~/Content/calendar/fullcalendar.print.min.css",
                       "~/Content/style.css",
                       "~/Content/responsive.css",
-                      "~/Content/datatables/css/datatables.bootstrap.css"));
+                      "~/Content/datatables/css/datatables.bootstrap.css",
+                      "~/Content/toastr.css"));
         }
     }
 }

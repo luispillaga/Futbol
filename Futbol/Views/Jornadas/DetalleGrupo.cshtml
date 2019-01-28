@@ -1,0 +1,82 @@
+﻿@model Futbol.ModelViews.JornadaPartidoViewModel
+@{
+    ViewBag.Title = "DetalleGrupo";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    var countPartidos = 0;
+}
+
+<div class="library-book-area mg-t-30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="single-cards-item">
+                    <div class="single-product-image">
+                        <a href="#"><img src="@Url.Content("~/Content/img/espe-images/fotojornada.JPG")" alt=""></a>
+                    </div>
+                    <div class="single-product-text">
+                        <h4 class="cards-hd-dn">
+                            @ViewBag.jornada_nombre
+                        </h4>
+                        <h5>
+                            @Html.DisplayFor(model => model.Jornada.jornada_fecha_inicio)
+                        </h5>
+                        <a class="follow-cards disabled" href="@Url.Action("Edit", "Jornadas", new { id = Model.Jornada.jornada_id })">Editar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                @foreach (var partido in Model.Partidos)
+                {
+                    <a href="@Url.Action("DetallePartidoGrupo","Partidos", new {id = partido.partido_id, jornada_name = ViewBag.jornada_nombre})">
+                    <div class="hpanel widget-int-shape responsive-mg-b-30 res-tablet-mg-t-30 dk-res-t-pro-30 card">
+                        <div class="panel-body">
+                            <div class="stats-title pull-left">
+                                <h4>Partido @(countPartidos=countPartidos+1)</h4>
+                            </div>
+                            <div class="m-t-xl widget-cl-3">
+                                @foreach (var local in Model.EquiposLocales)
+                                {
+                                    if (partido.partido_equipo_local == local.equipo_id)
+                                    {
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
+                                            <img class="margin-right-left" src="@Url.Content(local.Imagen.imagen_path)" style="width: 60px; height: 60px;"/><span>@local.equipo_nombre</span>
+                                        </div>
+                                    }
+                                }
+                                
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
+                                    <h3>       
+                                        VS
+                                    </h3>
+                                    <h5>
+                                        @partido.partido_estado
+                                    </h5>
+                                    <h6>
+                                        @partido.partido_hora
+                                    </h6>
+                                </div>
+                                
+                                @foreach (var visitante in Model.EquiposVisitantes)
+                                {
+                                    if (partido.partido_equipo_visitante == visitante.equipo_id)
+                                    {
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
+                                            <img class="margin-right-left" src="@Url.Content(visitante.Imagen.imagen_path)" style="width: 60px; height: 60px;"/><span>@visitante.equipo_nombre</span>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+
+                    <br />
+                }
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

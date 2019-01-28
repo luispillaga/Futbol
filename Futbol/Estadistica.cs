@@ -12,7 +12,7 @@ namespace Futbol
     using System;
     using System.Collections.Generic;
     
-    public partial class Estadistica
+    public partial class Estadistica: IComparable
     {
         public int estadistica_id { get; set; }
         public Nullable<int> estadistica_puntos { get; set; }
@@ -25,5 +25,43 @@ namespace Futbol
         public Nullable<int> fase_equ_id { get; set; }
     
         public virtual FaseEquipo FaseEquipo { get; set; }
+
+        public int CompareTo(object obj)
+        {
+            var estadistica = obj as Estadistica;
+            if (this.estadistica_puntos > estadistica.estadistica_puntos)
+            {
+                return 1;
+            }else if (this.estadistica_puntos < estadistica.estadistica_puntos)
+            {
+                return -1;
+            }
+            else
+            {
+                if (this.estadistica_gol_diferencia > estadistica.estadistica_gol_diferencia)
+                {
+                    return 1;
+                }else if (this.estadistica_gol_diferencia < estadistica.estadistica_gol_diferencia)
+                {
+                    return -1;
+                }
+                else
+                {
+                    if (this.estadistica_gol_favor > estadistica.estadistica_gol_favor)
+                    {
+                        return 1;
+                    }else if (this.estadistica_gol_favor > estadistica.estadistica_gol_favor)
+                    {
+                        return -1;
+                    }
+                    else
+                    {
+                        //TODO Validar mas casos de empate
+                        return 0;
+                    }
+                }
+
+            }
+        }
     }
 }

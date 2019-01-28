@@ -26,8 +26,10 @@ namespace Futbol
         public int faseg_numero_grupos { get; set; }
         public int faseg_al_mejor_de { get; set; }
         public string faseg_estado { get; set; }
+        public Nullable<int> torneo_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Grupo> Grupo { get; set; }
+        public virtual Torneo Torneo { get; set; }
     }
 }

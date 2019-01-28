@@ -1,35 +1,175 @@
-﻿@model Futbol.Grupo
+﻿@model Futbol.ModelViews.GrupoViewModel
 
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    var count = 0;
+    var countJornadas = 0;
 }
-
-<h2>Details</h2>
-
-<div>
-    <h4>Grupo</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.grupo_nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.grupo_nombre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FaseGrupo.faseg_nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FaseGrupo.faseg_nombre)
-        </dd>
-
-    </dl>
+<div class="library-book-area mg-t-30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="single-cards-item">
+                    <div class="single-product-image">
+                        <a href="#"><img src="@Url.Content("~/Content/img/espe-images/faseg.jpg")" alt=""></a>
+                    </div>
+                    <div class="single-product-text">
+                        <h4 class="cards-hd-dn">
+                            @Html.DisplayFor(model => model.Grupo.grupo_nombre)
+                        </h4>
+                        <h5>
+                            @Html.DisplayFor(model => model.Grupo.FaseGrupo.faseg_nombre)
+                        </h5>
+                        <a class="follow-cards disabled" href="@Url.Action("Edit", "Grupos", new { id = Model.Grupo.grupo_id })">Editar</a>
+                        <button data-grupo-id="@Model.Grupo.grupo_id" class="js-delete btn btn-danger" style="height: 30px; width: 70px;">Borrar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <div class="product-payment-inner-st res-mg-t-30 analysis-progrebar-ctn">
+                    <ul id="myTabedu1" class="tab-review-design">
+                        <li class="active"><a href="#equipos">Equipos</a></li>
+                        <li class=""><a href="#calendario">Calendario</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content custom-product-edit st-prf-pro">
+                        <div class="product-tab-list tab-pane fade active in" id="equipos">
+                            <br />
+                            @if (!Model.Jornadas.Any())
+                            {
+                                <button id="btnAddEquipo" class="btn btn-primary">Añadir Equipo</button>
+                            }
+                            <hr/>
+                            @if (Model.EquiposEstadisticas != null)
+                            {
+                                <table id="tabla_posiciones" class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Equipo</th>
+                                        <th>P</th>
+                                        <th>PT</th>
+                                        <th>PG</th>
+                                        <th>PE</th>
+                                        <th>PP</th>
+                                        <th>GF</th>
+                                        <th>GC</th>
+                                        <th>GD</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach (var item in Model.EquiposEstadisticas)
+                                    {
+                                        <tr>
+                                            <td>@(count = count + 1)</td>
+                                            @foreach (var item2 in Model.TorneosEquipos)
+                                            {
+                                                if (item.FaseEquipo.tor_equ_id == item2.tor_equ_id)
+                                                {
+                                                    <td>@item2.Equipo.equipo_nombre</td>
+                                                }
+                                            }
+                                            <td>@item.estadistica_puntos</td>
+                                            <td>@(item.estadistica_derrotas + item.estadistica_empates + item.estadistica_victorias)</td>
+                                            <td>@item.estadistica_victorias</td>
+                                            <td>@item.estadistica_empates</td>
+                                            <td>@item.estadistica_derrotas</td>
+                                            <td>@item.estadistica_gol_favor</td>
+                                            <td>@item.estadistica_gol_contra</td>
+                                            <td>@item.estadistica_gol_diferencia</td>
+                                        </tr>
+                                    }
+                                    </tbody>
+                                </table>
+                            }
+                        </div>
+                        <div class="product-tab-list tab-pane fade" id="calendario">
+                            <br />
+                            @if (!Model.Jornadas.Any())
+                            {
+                                <button data-grupo-id = "@Model.grupo_id" id="btnAddCalendario" class="btn btn-primary">Generar Calendario</button>
+                            }
+                            else
+                            {
+                                <div class="white-box">
+                                    <ul class="basic-list">
+                                        @foreach (var item in Model.Jornadas)
+                                        {
+                                            <li>
+                                                Jornada @(countJornadas=countJornadas+1) - @item.jornada_fecha_inicio<span class="alignright">
+                                                    <a class="btn btn-primary" href="@Url.Action("DetalleGrupo", "Jornadas", new {id = @item.jornada_id, jornada_nombre = "Jornada "+countJornadas})">Ver Jornada</a>
+                                                </span>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.grupo_id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+@*Modal Section*@
+<div class="modal fade" id="EquipoModal">
+    <div class="modal-dialog modal-lg" style=" width: 600px !important;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" class="close" data-dismiss="modal">&times;</a>
+                <h5>Añadir Equipo</h5>
+            </div>
+            @using (Html.BeginForm("AddEquipo", "FaseEquipos", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(m => m.grupo_id)
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        @Html.DropDownList("tor_equ_id", null, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button id="save" type="submit" class="btn btn-primary">Añadir</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#btnAddEquipo").on("click", function () {
+                $("#EquipoModal").modal();
+            });
+            $("#btnAddCalendario").on("click", function() {
+                var button = $(this);
+                bootbox.confirm("¿Esta seguro que desea generar el calendario?", function(result) {
+                    if (result) {
+                        $.ajax({
+                            dataType: 'JSON',
+                            type: 'POST',
+                            url: "../GenerarCalendario/" + button.attr("data-grupo-id"),
+                            success: function (r) {
+                                console.log(r);
+                                if (r) {
+                                    toastr.success("Calendario generado exitosamente.");
+                                    setTimeout(function(){
+                                        window.location.reload(1);
+                                    }, 3000);
+                                } else {
+                                    toastr.warning("No se pudo generar el calendario");
+                                }
+                            },
+                            error: function(jqXHR, textStatus, errorThrown) {
+                                alert("Algo salio mal! " + errorThrown);
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}

@@ -14,7 +14,7 @@
 <div class="row">
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 margin-top-bot">
         <a href="@Url.Action("RegisterTorneo", "Torneos")">
-            <div class="torneo-box">
+            <div class="torneo-box card">
                 <div class="torneo-image">
                     <img class="img-torneo" src="@Url.Content("../../Content/img/espe-images/plus2.svg")" alt="Alternate Text" />
                 </div>
@@ -28,7 +28,7 @@
     {
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 margin-top-bot">
             <a href="@Url.Action("TorneoHome","Torneos", new { id = item.torneo_id })">
-                <div class="torneo-box">
+                <div class="torneo-box card">
                     <div class="torneo-image">
                         @if (item.Imagen.imagen_path == null)
                         {

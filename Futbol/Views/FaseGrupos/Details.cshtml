@@ -91,7 +91,7 @@
                     <ul class="basic-list">
                         @foreach (var item in Model.ListaGrupos)
                         {
-                            <li>@item.grupo_nombre<span class="alignright"><a class="btn btn-primary" href="@Url.Action("Details", "Grupos", new {id = Model.FaseGrupo.faseg_id})">Ver Grupo</a>
+                            <li>@item.grupo_nombre<span class="alignright"><a class="btn btn-primary" href="@Url.Action("Details", "Grupos", new {id = @item.grupo_id})">Ver Grupo</a>
                             </span></li>
                         }
 

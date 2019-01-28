@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Futbol;
+using Futbol.ModelViews;
 
 namespace Futbol.Controllers
 {
@@ -34,6 +35,52 @@ namespace Futbol.Controllers
                 return HttpNotFound();
             }
             return View(jornada);
+        }
+
+        // GET: Jornadas/DetalleGrupo/5
+        public ActionResult DetalleGrupo(int? id, string jornada_nombre)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Jornada jornada = db.Jornada.Find(id);
+            if (jornada == null)
+            {
+                return HttpNotFound();
+            }
+            
+            List<Equipo> locales = new List<Equipo>();
+            List<Equipo> visitantes = new List<Equipo>();
+            var partidos = db.Partido.Where(p => p.jornada_id == id);
+            var equipos = db.Equipo;
+            if (partidos !=null)
+            {
+                foreach (var item in partidos)
+                {
+                    foreach (var item2 in equipos)
+                    {
+                        if (item.partido_equipo_local == item2.equipo_id)
+                        {
+                            locales.Add(item2);
+                        }
+                        if (item.partido_equipo_visitante == item2.equipo_id)
+                        {
+                            visitantes.Add(item2);
+                        }
+                    }
+                }
+            }
+
+            ViewBag.jornada_nombre = jornada_nombre;
+            var ViewModel = new JornadaPartidoViewModel()
+            {
+                Jornada = jornada,
+                Partidos = db.Partido.Where(p => p.jornada_id == id),
+                EquiposLocales = locales,
+                EquiposVisitantes = visitantes
+            };
+            return View(ViewModel);
         }
 
         // GET: Jornadas/Create

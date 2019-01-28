@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Futbol.FaseEquipo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TorneoEquipo.tor_equ_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grupo.grupo_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TorneoEquipo1.tor_equ_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TorneoEquipo.tor_equ_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Grupo.grupo_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TorneoEquipo1.tor_equ_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.fase_equ_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.fase_equ_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.fase_equ_id })
+        </td>
+    </tr>
+}
+
+</table>

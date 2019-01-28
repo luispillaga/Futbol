@@ -36,6 +36,13 @@ namespace Futbol.Controllers
             return View(partido);
         }
 
+        //GET: Partidos/DetallePartidoGrupo/5
+        public ActionResult DetallePartidoGrupo(int? id, string jornada_nombre)
+        {
+
+            return View();
+        }
+
         // GET: Partidos/Create
         public ActionResult Create()
         {
